@@ -1,0 +1,588 @@
+<!-- Quiz des Tages (v2.0)  -->
+
+<div id="quiz-des-tages-container-2">
+  <p>Frage wird geladen...</p>
+</div>
+<p>
+  <script>
+    (function() {
+      const containerId = 'quiz-des-tages-container-2';
+
+      function injectQuizStyles() {
+        const cssRules = `
+          #${containerId} {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+          }
+          /* Basis-Layout für die Buttons: Vertikal, linksbündig */
+          #${containerId} .quiz-optionen {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 8px;
+          }
+          #${containerId} .quiz-option {
+            padding: 6px 12px; /* Innenabstand für bessere Optik */
+          }
+          #${containerId} .feedback-korrekt {
+            color: green;
+            margin-top: 15px;
+            font-weight: bold;
+          }
+          #${containerId} .feedback-falsch {
+            color: red;
+            margin-top: 15px;
+            font-weight: bold;
+          }
+        `;
+        const styleElement = document.createElement('style');
+        styleElement.textContent = cssRules;
+        document.head.appendChild(styleElement);
+      }
+
+      injectQuizStyles();
+
+      const fragen = [
+        // Hier kommt die Fragenliste rein
+        {
+          typ: 'multiple-choice',
+          frage: 'Welcher Planet ist in unserem Sonnensystem der Sonne am nächsten?',
+          optionen: ['Venus', 'Mars', 'Merkur', 'Erde'],
+          antwort: 2,
+          feedback: 'Merkur ist der innerste und kleinste Planet in unserem Sonnensystem.'
+        },
+
+        {
+          typ: 'freitext',
+          frage: 'Wie lautet die chemische Formel für Wasser?',
+          antwort: 'H2O',
+          feedback: 'Ein Wassermolekül besteht aus zwei Wasserstoffatomen (H) und einem Sauerstoffatom (O).'
+        },
+
+        {
+          typ: 'multiple-choice',
+          frage: 'Wer schrieb die berühmte Tragödie "Hamlet"?',
+          optionen: ['Charles Dickens', 'William Shakespeare',
+            'Leo Tolstoi', 'Mark Twain'
+          ],
+          antwort: 1,
+          feedback: '"Hamlet" ist eines der bekanntesten Werke von William Shakespeare.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Was ist die Hauptstadt von Australien?',
+          optionen: ['Sydney', 'Melbourne', 'Canberra', 'Perth'],
+          antwort: 2,
+          feedback: 'Obwohl Sydney die größte Stadt ist, ist Canberra die Hauptstadt von Australien.'
+        },
+        {
+          typ: 'freitext',
+          frage: 'Wie viele Beine hat eine Spinne?',
+          antwort: '8',
+          feedback: 'Spinnen gehören zu den Spinnentieren und haben typischerweise acht Beine.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'In welcher Stadt steht der Eiffelturm?',
+          optionen: ['London', 'Berlin', 'Paris', 'Rom'],
+          antwort: 2,
+          feedback: 'Der Eiffelturm ist eines der bekanntesten Wahrzeichen von Paris.'
+        },
+        {
+          typ: 'freitext',
+          frage: 'Wie heißt der größte Ozean der Erde?',
+          antwort: 'Pazifik',
+          feedback: 'Der Pazifische Ozean, auch Stiller Ozean genannt, bedeckt fast ein Drittel der Erdoberfläche.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welches ist das höchste Gebäude der Welt (Stand 2023)?',
+          optionen: ['Eiffelturm', 'Burj Khalifa', 'Empire State Building',
+            'Shanghai Tower'
+          ],
+          antwort: 1,
+          feedback: 'Der Burj Khalifa in Dubai ist mit 828 Metern das höchste Gebäude der Welt.'
+        },
+        {
+          typ: 'freitext',
+          frage: 'Wer malte die Mona Lisa?',
+          antwort: 'Leonardo da Vinci',
+          feedback: 'Die Mona Lisa ist ein weltberühmtes Ölgemälde von Leonardo da Vinci aus der Hochrenaissance.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Wie viele Kontinente gibt es?',
+          optionen: ['5', '6', '7', '8'],
+          antwort: 2,
+          feedback: 'Es gibt sieben Kontinente: Asien, Afrika, Nordamerika, Südamerika, Antarktika, Europa und Australien.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Wie viele Kontinente gibt es auf der Erde?',
+          optionen: ['5', '6', '7', '8'],
+          antwort: 2,
+          feedback: 'Es gibt sieben Kontinente: Afrika, Antarktika, Asien, Australien, Europa, Nordamerika und Südamerika.'
+        },
+        {
+          typ: 'freitext',
+          frage: 'Wie heißt die Hauptstadt von Kanada?',
+          antwort: 'Ottawa',
+          feedback: 'Die Hauptstadt Kanadas ist Ottawa, nicht Toronto oder Montreal.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welches chemische Element hat das Symbol \'O\'?',
+          optionen: ['Gold', 'Sauerstoff', 'Silber', 'Osmium'],
+          antwort: 1,
+          feedback: 'Das Symbol \'O\' steht für Sauerstoff.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Wer war der erste Mensch auf dem Mond?',
+          optionen: ['Yuri Gagarin', 'Buzz Aldrin', 'Neil Armstrong',
+            'Michael Collins'
+          ],
+          antwort: 2,
+          feedback: 'Neil Armstrong betrat 1969 als erster Mensch den Mond.'
+        },
+        {
+          typ: 'freitext',
+          frage: 'Wie lautet das chemische Symbol für Natrium?',
+          antwort: 'Na',
+          feedback: 'Das Symbol für Natrium leitet sich vom lateinischen Namen \'Natrium\' ab.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welches Land hat die größte Bevölkerung der Welt (Stand 2023)?',
+          optionen: ['China', 'Indien', 'USA', 'Indonesien'],
+          antwort: 1,
+          feedback: 'Indien hat inzwischen China in der Bevölkerungszahl überholt.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welcher Ozean ist der größte?',
+          optionen: ['Atlantischer Ozean', 'Pazifischer Ozean',
+            'Indischer Ozean', 'Arktischer Ozean'
+          ],
+          antwort: 1,
+          feedback: 'Der Pazifik ist mit Abstand der größte Ozean der Erde.'
+        },
+        {
+          typ: 'freitext',
+          frage: 'Welches Tier ist das größte lebende Tier der Erde?',
+          antwort: 'Blauwal',
+          feedback: 'Der Blauwal kann bis zu 30 Meter lang werden und ist das größte Tier der Erde.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welches Land gewann die Fußball-Weltmeisterschaft 2014?',
+          optionen: ['Brasilien', 'Deutschland', 'Spanien', 'Argentinien'],
+          antwort: 1,
+          feedback: 'Deutschland gewann die WM 2014 in Brasilien.'
+        },
+        {
+          typ: 'freitext',
+          frage: 'Welches ist das höchste Gebirge der Erde?',
+          antwort: 'Himalaya',
+          feedback: 'Das Himalaya-Gebirge mit dem Mount Everest ist das höchste Gebirge der Erde.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Wie viele Planeten gibt es im Sonnensystem?',
+          optionen: ['7', '8', '9', '10'],
+          antwort: 1,
+          feedback: 'Seit der Aberkennung Plutos gibt es 8 Planeten.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welche Farbe hat Chlorophyll hauptsächlich?',
+          optionen: ['Rot', 'Blau', 'Grün', 'Gelb'],
+          antwort: 2,
+          feedback: 'Chlorophyll ist der grüne Farbstoff der Pflanzen.'
+        },
+        {
+          typ: 'freitext',
+          frage: 'Wie heißt die Hauptstadt von Australien?',
+          antwort: 'Canberra',
+          feedback: 'Viele denken an Sydney oder Melbourne, aber die Hauptstadt ist Canberra.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'In welchem Jahr fiel die Berliner Mauer?',
+          optionen: ['1985', '1987', '1989', '1991'],
+          antwort: 2,
+          feedback: 'Die Mauer fiel 1989.'
+        },
+        {
+          typ: 'freitext',
+          frage: 'Wie viele Minuten hat eine Stunde?',
+          antwort: '60',
+          feedback: 'Eine Stunde hat 60 Minuten.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welches ist das kleinste Land der Welt?',
+          optionen: ['Monaco', 'Vatikanstadt', 'Liechtenstein',
+            'San Marino'
+          ],
+          antwort: 1,
+          feedback: 'Vatikanstadt ist mit nur etwa 0,44 km² das kleinste Land der Welt.'
+        },
+        {
+          typ: 'freitext',
+          frage: 'Wie lautet die chemische Formel für Kohlendioxid?',
+          antwort: 'CO2',
+          feedback: 'Kohlendioxid besteht aus einem Kohlenstoff- und zwei Sauerstoffatomen.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welches Land ist flächenmäßig am größten?',
+          optionen: ['Kanada', 'Russland', 'China', 'USA'],
+          antwort: 1,
+          feedback: 'Russland ist das größte Land der Erde.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Wie viele Bundesstaaten haben die USA?',
+          optionen: ['48', '49', '50', '51'],
+          antwort: 2,
+          feedback: 'Die Vereinigten Staaten bestehen aus 50 Bundesstaaten.'
+        },
+        {
+          typ: 'freitext',
+          frage: 'Welches Gas atmen wir hauptsächlich ein?',
+          antwort: 'Stickstoff',
+          feedback: 'Die Luft besteht zu etwa 78% aus Stickstoff.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Wer erfand die Glühbirne?',
+          optionen: ['Nikola Tesla', 'Thomas Edison',
+            'Alexander Graham Bell', 'James Watt'
+          ],
+          antwort: 1,
+          feedback: 'Thomas Edison wird die Erfindung der praktischen Glühbirne zugeschrieben.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welche Sprache hat weltweit die meisten Muttersprachler?',
+          optionen: ['Englisch', 'Mandarin-Chinesisch', 'Spanisch',
+            'Hindi'
+          ],
+          antwort: 1,
+          feedback: 'Mandarin-Chinesisch hat die meisten Muttersprachler.'
+        },
+        {
+          typ: 'freitext',
+          frage: 'Welcher deutsche Physiker entwickelte die Relativitätstheorie?',
+          antwort: 'Albert Einstein',
+          feedback: 'Albert Einstein veröffentlichte 1905 die spezielle Relativitätstheorie.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welches Tier legt Eier?',
+          optionen: ['Hund', 'Katze', 'Huhn', 'Pferd'],
+          antwort: 2,
+          feedback: 'Hühner legen Eier.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welche Stadt wird auch \'Big Apple\' genannt?',
+          optionen: ['Los Angeles', 'Chicago', 'New York City',
+            'San Francisco'
+          ],
+          antwort: 2,
+          feedback: 'New York City trägt den Spitznamen \'Big Apple\'.'
+        },
+        {
+          typ: 'freitext',
+          frage: 'Wie heißt der längste Fluss der Welt?',
+          antwort: 'Nil',
+          feedback: 'Der Nil ist etwa 6.650 km lang.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Wie viele Zähne hat ein erwachsener Mensch normalerweise?',
+          optionen: ['28', '30', '32', '34'],
+          antwort: 2,
+          feedback: 'Erwachsene haben in der Regel 32 Zähne.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welches Metall wird hauptsächlich für elektrische Leitungen verwendet?',
+          optionen: ['Gold', 'Silber', 'Kupfer', 'Aluminium'],
+          antwort: 2,
+          feedback: 'Kupfer wird aufgrund seiner Leitfähigkeit häufig für Kabel verwendet.'
+        },
+        {
+          typ: 'freitext',
+          frage: 'Welches ist das größte Land in Südamerika?',
+          antwort: 'Brasilien',
+          feedback: 'Brasilien nimmt fast die Hälfte der Fläche Südamerikas ein.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welcher Planet hat die meisten Monde?',
+          optionen: ['Jupiter', 'Saturn', 'Uranus', 'Neptun'],
+          antwort: 1,
+          feedback: 'Saturn hat nach aktuellen Entdeckungen die meisten Monde.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Wie viele Spieler hat eine Fußballmannschaft auf dem Feld?',
+          optionen: ['9', '10', '11', '12'],
+          antwort: 2,
+          feedback: 'Eine Fußballmannschaft besteht aus 11 Spielern auf dem Feld.'
+        },
+        {
+          typ: 'freitext',
+          frage: 'Welches Tier wird auch \'König der Tiere\' genannt?',
+          antwort: 'Löwe',
+          feedback: 'Der Löwe wird traditionell als \'König der Tiere\' bezeichnet.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Wie viele Farben hat ein Regenbogen?',
+          optionen: ['5', '6', '7', '8'],
+          antwort: 2,
+          feedback: 'Ein Regenbogen hat sieben Farben.'
+        },
+        {
+          typ: 'freitext',
+          frage: 'Wie heißt die Hauptstadt von Japan?',
+          antwort: 'Tokio',
+          feedback: 'Die Hauptstadt Japans ist Tokio.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welches Tier kann fliegen?',
+          optionen: ['Elefant', 'Pinguin', 'Fledermaus', 'Känguru'],
+          antwort: 2,
+          feedback: 'Fledermäuse sind die einzigen flugfähigen Säugetiere.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welche Währung wird in Großbritannien verwendet?',
+          optionen: ['Euro', 'Pfund Sterling', 'Dollar', 'Franken'],
+          antwort: 1,
+          feedback: 'In Großbritannien wird mit Pfund Sterling bezahlt.'
+        },
+        {
+          typ: 'freitext',
+          frage: 'Wie viele Planeten gibt es in unserem Sonnensystem?',
+          antwort: '8',
+          feedback: 'Seit 2006 zählt Pluto nicht mehr als Planet, es bleiben 8.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welche Sprache wird in Brasilien gesprochen?',
+          optionen: ['Spanisch', 'Portugiesisch', 'Französisch',
+            'Italienisch'
+          ],
+          antwort: 1,
+          feedback: 'Die Amtssprache Brasiliens ist Portugiesisch.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welche chemische Substanz macht Karotten orange?',
+          optionen: ['Chlorophyll', 'Carotin', 'Anthocyan', 'Lykopin'],
+          antwort: 1,
+          feedback: 'Das orange Pigment in Karotten ist Beta-Carotin.'
+        },
+        {
+          typ: 'freitext',
+          frage: 'Welcher Planet wird oft als \'Roter Planet\' bezeichnet?',
+          antwort: 'Mars',
+          feedback: 'Mars wird wegen seiner rötlichen Farbe \'Roter Planet\' genannt.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welches Tier ist ein Säugetier?',
+          optionen: ['Hai', 'Delfin', 'Krokodil', 'Kröte'],
+          antwort: 1,
+          feedback: 'Delfine sind Meeressäuger.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welche Einheit wird für elektrische Stromstärke verwendet?',
+          optionen: ['Volt', 'Ampere', 'Watt', 'Ohm'],
+          antwort: 1,
+          feedback: 'Die Stromstärke wird in Ampere gemessen.'
+        },
+        {
+          typ: 'freitext',
+          frage: 'Wie heißt die Hauptstadt von Italien?',
+          antwort: 'Rom',
+          feedback: 'Die Hauptstadt Italiens ist Rom.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welcher Musiker wird als \'King of Pop\' bezeichnet?',
+          optionen: ['Elvis Presley', 'Michael Jackson', 'Prince',
+            'Madonna'
+          ],
+          antwort: 1,
+          feedback: 'Michael Jackson trägt den Titel \'King of Pop\'.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welches Land wird als \'Land der aufgehenden Sonne\' bezeichnet?',
+          optionen: ['China', 'Japan', 'Thailand', 'Südkorea'],
+          antwort: 1,
+          feedback: 'Japan wird das \'Land der aufgehenden Sonne\' genannt.'
+        },
+        {
+          typ: 'freitext',
+          frage: 'Welches Tier produziert Honig?',
+          antwort: 'Biene',
+          feedback: 'Bienen produzieren Honig.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welches ist das schnellste Landtier?',
+          optionen: ['Leopard', 'Tiger', 'Gepard', 'Antilope'],
+          antwort: 2,
+          feedback: 'Der Gepard ist das schnellste Landtier.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welche Farbe ergibt sich, wenn man Blau und Gelb mischt?',
+          optionen: ['Grün', 'Orange', 'Violett', 'Braun'],
+          antwort: 0,
+          feedback: 'Blau und Gelb gemischt ergeben Grün.'
+        },
+        {
+          typ: 'freitext',
+          frage: 'Wie viele Tage hat ein Schaltjahr?',
+          antwort: '366',
+          feedback: 'Ein Schaltjahr hat 366 Tage.'
+        },
+
+        {
+          typ: 'multiple-choice',
+          frage: 'Welche Stadt liegt am Nil?',
+          optionen: ['Kairo', 'Kapstadt', 'Addis Abeba', 'Lagos'],
+          antwort: 0,
+          feedback: 'Kairo liegt am Nil in Ägypten.'
+        },
+        {
+          typ: 'freitext',
+          frage: 'Welcher Kontinent ist sowohl ein Land als auch ein Kontinent?',
+          antwort: 'Australien',
+          feedback: 'Australien ist sowohl ein Land als auch ein Kontinent.'
+        }
+
+      ];
+
+      const container = document.getElementById(containerId);
+      if (!container) return;
+
+      const heute = new Date();
+      const startDesJahres = new Date(heute.getFullYear(), 0, 0);
+      const diff = heute.getTime() - startDesJahres.getTime();
+      const einTag = 1000 * 60 * 60 * 24;
+      const tagDesJahres = Math.floor(diff / einTag) - 1;
+      const frageIndex = tagDesJahres % fragen.length;
+      const heutigeFrage = fragen[frageIndex];
+
+
+      // Funktion zur Anpassung der Button-Breiten
+
+      function adjustButtonWidths() {
+        const buttons = container.querySelectorAll('.quiz-option');
+        if (buttons.length === 0) return;
+
+        let maxWidth = 0;
+
+        buttons.forEach(button => {
+          if (button.offsetWidth > maxWidth) {
+            maxWidth = button.offsetWidth;
+          }
+        });
+
+
+        buttons.forEach(button => {
+          button.style.width = `${maxWidth}px`;
+        });
+      }
+
+      function quizAnzeigen() {
+        if (!heutigeFrage) {
+          container.innerHTML =
+            'Fehler: Heutige Frage konnte nicht geladen werden.';
+          return;
+        }
+        let htmlContent =
+          `<h3>Daily Quiz</h3><p>${heutigeFrage.frage}</p>`;
+        if (heutigeFrage.typ === 'multiple-choice') {
+          htmlContent += '<div class="quiz-optionen">';
+          heutigeFrage.optionen.forEach((option, index) => {
+            htmlContent +=
+              `<button class="quiz-option" data-index="${index}">${option}</button>`;
+          });
+          htmlContent += '</div>';
+        } else if (heutigeFrage.typ === 'freitext') {
+          htmlContent += `
+            <div>
+              <input type="text" class="freitext-antwort" placeholder="Deine Antwort...">
+              <button class="freitext-pruefen">Prüfen</button>
+            </div>`;
+        }
+        htmlContent += '<div class="feedback-bereich"></div>';
+        container.innerHTML = htmlContent;
+
+
+        adjustButtonWidths();
+
+        attachEventListeners();
+      }
+
+      function attachEventListeners() {
+        if (heutigeFrage.typ === 'multiple-choice') {
+          container.querySelectorAll('.quiz-option').forEach(button => {
+            button.addEventListener('click', function() {
+              checkAnswer(parseInt(this.dataset.index));
+            });
+          });
+        } else if (heutigeFrage.typ === 'freitext') {
+          const pruefenButton = container.querySelector('.freitext-pruefen');
+          const textInput = container.querySelector('.freitext-antwort');
+          if (pruefenButton && textInput) {
+            pruefenButton.addEventListener('click', () => checkAnswer(
+              textInput.value));
+            textInput.addEventListener('keyup', event => {
+              if (event.key === "Enter") pruefenButton.click();
+            });
+          }
+        }
+      }
+
+      function checkAnswer(userAnswer) {
+        const feedbackBereich = container.querySelector('.feedback-bereich');
+        let isCorrect = false;
+        if (heutigeFrage.typ === 'multiple-choice') {
+          isCorrect = (userAnswer === heutigeFrage.antwort);
+          container.querySelectorAll('.quiz-option').forEach(b => b.disabled =
+            true);
+        } else if (heutigeFrage.typ === 'freitext') {
+          isCorrect = (userAnswer.trim().toLowerCase() === heutigeFrage
+            .antwort.toLowerCase());
+          container.querySelector('.freitext-antwort').disabled = true;
+          container.querySelector('.freitext-pruefen').disabled = true;
+        }
+        if (isCorrect) {
+          feedbackBereich.innerHTML =
+            `<strong>Richtig!</strong> ${heutigeFrage.feedback}`;
+          feedbackBereich.className = 'feedback-bereich feedback-korrekt';
+        } else {
+          feedbackBereich.innerHTML =
+            `<strong>Leider falsch.</strong> ${heutigeFrage.feedback}`;
+          feedbackBereich.className = 'feedback-bereich feedback-falsch';
+        }
+      }
+
+      if (heutigeFrage) {
+        quizAnzeigen();
+      }
+    })();
+  </script>
+</p>
