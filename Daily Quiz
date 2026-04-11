@@ -1,19 +1,21 @@
-<!-- Quiz des Tages (v2.0)  -->
+<!-- Quiz des Tages (v2.1) - Moodle-kompatibel -->
 
 <div id="quiz-des-tages-container-2">
   <p>Frage wird geladen...</p>
 </div>
-<p>
+<div>
   <script>
     (function() {
       const containerId = 'quiz-des-tages-container-2';
+
+      const container = document.getElementById(containerId);
+      if (!container) return;
 
       function injectQuizStyles() {
         const cssRules = `
           #${containerId} {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
           }
-          /* Basis-Layout für die Buttons: Vertikal, linksbündig */
           #${containerId} .quiz-optionen {
             display: flex;
             flex-direction: column;
@@ -21,28 +23,45 @@
             gap: 8px;
           }
           #${containerId} .quiz-option {
-            padding: 6px 12px; /* Innenabstand für bessere Optik */
+            padding: 6px 12px;
+            cursor: pointer;
+          }
+          #${containerId} .quiz-option:disabled {
+            cursor: default;
           }
           #${containerId} .feedback-korrekt {
-            color: green;
+            color: #155724;
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+            border-radius: 4px;
+            padding: 10px 15px;
             margin-top: 15px;
             font-weight: bold;
           }
           #${containerId} .feedback-falsch {
-            color: red;
+            color: #721c24;
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+            border-radius: 4px;
+            padding: 10px 15px;
             margin-top: 15px;
+            font-weight: bold;
+          }
+          #${containerId} .antwort-highlight {
+            background-color: #d4edda !important;
+            border-color: #28a745 !important;
             font-weight: bold;
           }
         `;
         const styleElement = document.createElement('style');
         styleElement.textContent = cssRules;
-        document.head.appendChild(styleElement);
+        // In Container einfügen (nicht document.head) – Moodle-kompatibel
+        container.insertBefore(styleElement, container.firstChild);
       }
 
       injectQuizStyles();
 
       const fragen = [
-        // Hier kommt die Fragenliste rein
         {
           typ: 'multiple-choice',
           frage: 'Welcher Planet ist in unserem Sonnensystem der Sonne am nächsten?',
@@ -50,20 +69,16 @@
           antwort: 2,
           feedback: 'Merkur ist der innerste und kleinste Planet in unserem Sonnensystem.'
         },
-
         {
           typ: 'freitext',
           frage: 'Wie lautet die chemische Formel für Wasser?',
           antwort: 'H2O',
           feedback: 'Ein Wassermolekül besteht aus zwei Wasserstoffatomen (H) und einem Sauerstoffatom (O).'
         },
-
         {
           typ: 'multiple-choice',
           frage: 'Wer schrieb die berühmte Tragödie "Hamlet"?',
-          optionen: ['Charles Dickens', 'William Shakespeare',
-            'Leo Tolstoi', 'Mark Twain'
-          ],
+          optionen: ['Charles Dickens', 'William Shakespeare', 'Leo Tolstoi', 'Mark Twain'],
           antwort: 1,
           feedback: '"Hamlet" ist eines der bekanntesten Werke von William Shakespeare.'
         },
@@ -96,9 +111,7 @@
         {
           typ: 'multiple-choice',
           frage: 'Welches ist das höchste Gebäude der Welt (Stand 2023)?',
-          optionen: ['Eiffelturm', 'Burj Khalifa', 'Empire State Building',
-            'Shanghai Tower'
-          ],
+          optionen: ['Eiffelturm', 'Burj Khalifa', 'Empire State Building', 'Shanghai Tower'],
           antwort: 1,
           feedback: 'Der Burj Khalifa in Dubai ist mit 828 Metern das höchste Gebäude der Welt.'
         },
@@ -116,13 +129,6 @@
           feedback: 'Es gibt sieben Kontinente: Asien, Afrika, Nordamerika, Südamerika, Antarktika, Europa und Australien.'
         },
         {
-          typ: 'multiple-choice',
-          frage: 'Wie viele Kontinente gibt es auf der Erde?',
-          optionen: ['5', '6', '7', '8'],
-          antwort: 2,
-          feedback: 'Es gibt sieben Kontinente: Afrika, Antarktika, Asien, Australien, Europa, Nordamerika und Südamerika.'
-        },
-        {
           typ: 'freitext',
           frage: 'Wie heißt die Hauptstadt von Kanada?',
           antwort: 'Ottawa',
@@ -138,9 +144,7 @@
         {
           typ: 'multiple-choice',
           frage: 'Wer war der erste Mensch auf dem Mond?',
-          optionen: ['Yuri Gagarin', 'Buzz Aldrin', 'Neil Armstrong',
-            'Michael Collins'
-          ],
+          optionen: ['Yuri Gagarin', 'Buzz Aldrin', 'Neil Armstrong', 'Michael Collins'],
           antwort: 2,
           feedback: 'Neil Armstrong betrat 1969 als erster Mensch den Mond.'
         },
@@ -160,9 +164,7 @@
         {
           typ: 'multiple-choice',
           frage: 'Welcher Ozean ist der größte?',
-          optionen: ['Atlantischer Ozean', 'Pazifischer Ozean',
-            'Indischer Ozean', 'Arktischer Ozean'
-          ],
+          optionen: ['Atlantischer Ozean', 'Pazifischer Ozean', 'Indischer Ozean', 'Arktischer Ozean'],
           antwort: 1,
           feedback: 'Der Pazifik ist mit Abstand der größte Ozean der Erde.'
         },
@@ -200,12 +202,6 @@
           feedback: 'Chlorophyll ist der grüne Farbstoff der Pflanzen.'
         },
         {
-          typ: 'freitext',
-          frage: 'Wie heißt die Hauptstadt von Australien?',
-          antwort: 'Canberra',
-          feedback: 'Viele denken an Sydney oder Melbourne, aber die Hauptstadt ist Canberra.'
-        },
-        {
           typ: 'multiple-choice',
           frage: 'In welchem Jahr fiel die Berliner Mauer?',
           optionen: ['1985', '1987', '1989', '1991'],
@@ -221,9 +217,7 @@
         {
           typ: 'multiple-choice',
           frage: 'Welches ist das kleinste Land der Welt?',
-          optionen: ['Monaco', 'Vatikanstadt', 'Liechtenstein',
-            'San Marino'
-          ],
+          optionen: ['Monaco', 'Vatikanstadt', 'Liechtenstein', 'San Marino'],
           antwort: 1,
           feedback: 'Vatikanstadt ist mit nur etwa 0,44 km² das kleinste Land der Welt.'
         },
@@ -256,18 +250,14 @@
         {
           typ: 'multiple-choice',
           frage: 'Wer erfand die Glühbirne?',
-          optionen: ['Nikola Tesla', 'Thomas Edison',
-            'Alexander Graham Bell', 'James Watt'
-          ],
+          optionen: ['Nikola Tesla', 'Thomas Edison', 'Alexander Graham Bell', 'James Watt'],
           antwort: 1,
           feedback: 'Thomas Edison wird die Erfindung der praktischen Glühbirne zugeschrieben.'
         },
         {
           typ: 'multiple-choice',
           frage: 'Welche Sprache hat weltweit die meisten Muttersprachler?',
-          optionen: ['Englisch', 'Mandarin-Chinesisch', 'Spanisch',
-            'Hindi'
-          ],
+          optionen: ['Englisch', 'Mandarin-Chinesisch', 'Spanisch', 'Hindi'],
           antwort: 1,
           feedback: 'Mandarin-Chinesisch hat die meisten Muttersprachler.'
         },
@@ -287,9 +277,7 @@
         {
           typ: 'multiple-choice',
           frage: 'Welche Stadt wird auch \'Big Apple\' genannt?',
-          optionen: ['Los Angeles', 'Chicago', 'New York City',
-            'San Francisco'
-          ],
+          optionen: ['Los Angeles', 'Chicago', 'New York City', 'San Francisco'],
           antwort: 2,
           feedback: 'New York City trägt den Spitznamen \'Big Apple\'.'
         },
@@ -375,9 +363,7 @@
         {
           typ: 'multiple-choice',
           frage: 'Welche Sprache wird in Brasilien gesprochen?',
-          optionen: ['Spanisch', 'Portugiesisch', 'Französisch',
-            'Italienisch'
-          ],
+          optionen: ['Spanisch', 'Portugiesisch', 'Französisch', 'Italienisch'],
           antwort: 1,
           feedback: 'Die Amtssprache Brasiliens ist Portugiesisch.'
         },
@@ -417,9 +403,7 @@
         {
           typ: 'multiple-choice',
           frage: 'Welcher Musiker wird als \'King of Pop\' bezeichnet?',
-          optionen: ['Elvis Presley', 'Michael Jackson', 'Prince',
-            'Madonna'
-          ],
+          optionen: ['Elvis Presley', 'Michael Jackson', 'Prince', 'Madonna'],
           antwort: 1,
           feedback: 'Michael Jackson trägt den Titel \'King of Pop\'.'
         },
@@ -456,7 +440,6 @@
           antwort: '366',
           feedback: 'Ein Schaltjahr hat 366 Tage.'
         },
-
         {
           typ: 'multiple-choice',
           frage: 'Welche Stadt liegt am Nil?',
@@ -470,11 +453,7 @@
           antwort: 'Australien',
           feedback: 'Australien ist sowohl ein Land als auch ein Kontinent.'
         }
-
       ];
-
-      const container = document.getElementById(containerId);
-      if (!container) return;
 
       const heute = new Date();
       const startDesJahres = new Date(heute.getFullYear(), 0, 0);
@@ -484,61 +463,44 @@
       const frageIndex = tagDesJahres % fragen.length;
       const heutigeFrage = fragen[frageIndex];
 
-
-      // Funktion zur Anpassung der Button-Breiten
-
       function adjustButtonWidths() {
         const buttons = container.querySelectorAll('.quiz-option');
         if (buttons.length === 0) return;
-
         let maxWidth = 0;
-
         buttons.forEach(button => {
-          if (button.offsetWidth > maxWidth) {
-            maxWidth = button.offsetWidth;
-          }
+          if (button.offsetWidth > maxWidth) maxWidth = button.offsetWidth;
         });
-
-
         buttons.forEach(button => {
-          button.style.width = `${maxWidth}px`;
+          button.style.width = maxWidth + 'px';
         });
       }
 
       function quizAnzeigen() {
         if (!heutigeFrage) {
-          container.innerHTML =
-            'Fehler: Heutige Frage konnte nicht geladen werden.';
+          container.innerHTML = 'Fehler: Heutige Frage konnte nicht geladen werden.';
           return;
         }
-        let htmlContent =
-          `<h3>Daily Quiz</h3><p>${heutigeFrage.frage}</p>`;
+        let htmlContent = '<h3>Daily Quiz</h3><p>' + heutigeFrage.frage + '</p>';
         if (heutigeFrage.typ === 'multiple-choice') {
-          htmlContent += '<div class="quiz-optionen">';
-          heutigeFrage.optionen.forEach((option, index) => {
-            htmlContent +=
-              `<button class="quiz-option" data-index="${index}">${option}</button>`;
+          htmlContent += '<div class="quiz-optionen" role="group" aria-label="Antwortmöglichkeiten">';
+          heutigeFrage.optionen.forEach(function(option, index) {
+            htmlContent += '<button type="button" class="quiz-option" data-index="' + index + '">' + option + '</button>';
           });
           htmlContent += '</div>';
         } else if (heutigeFrage.typ === 'freitext') {
-          htmlContent += `
-            <div>
-              <input type="text" class="freitext-antwort" placeholder="Deine Antwort...">
-              <button class="freitext-pruefen">Prüfen</button>
-            </div>`;
+          htmlContent += '<div><input type="text" class="freitext-antwort" placeholder="Deine Antwort..." aria-label="Deine Antwort"><button type="button" class="freitext-pruefen">Prüfen</button></div>';
         }
-        htmlContent += '<div class="feedback-bereich"></div>';
+        htmlContent += '<div class="feedback-bereich" aria-live="polite" aria-atomic="true"></div>';
         container.innerHTML = htmlContent;
-
-
+        // Style-Element neu einfügen nach innerHTML-Reset
+        injectQuizStyles();
         adjustButtonWidths();
-
         attachEventListeners();
       }
 
       function attachEventListeners() {
         if (heutigeFrage.typ === 'multiple-choice') {
-          container.querySelectorAll('.quiz-option').forEach(button => {
+          container.querySelectorAll('.quiz-option').forEach(function(button) {
             button.addEventListener('click', function() {
               checkAnswer(parseInt(this.dataset.index));
             });
@@ -547,10 +509,11 @@
           const pruefenButton = container.querySelector('.freitext-pruefen');
           const textInput = container.querySelector('.freitext-antwort');
           if (pruefenButton && textInput) {
-            pruefenButton.addEventListener('click', () => checkAnswer(
-              textInput.value));
-            textInput.addEventListener('keyup', event => {
-              if (event.key === "Enter") pruefenButton.click();
+            pruefenButton.addEventListener('click', function() {
+              checkAnswer(textInput.value);
+            });
+            textInput.addEventListener('keyup', function(event) {
+              if (event.key === 'Enter') pruefenButton.click();
             });
           }
         }
@@ -559,23 +522,32 @@
       function checkAnswer(userAnswer) {
         const feedbackBereich = container.querySelector('.feedback-bereich');
         let isCorrect = false;
+
         if (heutigeFrage.typ === 'multiple-choice') {
           isCorrect = (userAnswer === heutigeFrage.antwort);
-          container.querySelectorAll('.quiz-option').forEach(b => b.disabled =
-            true);
+          container.querySelectorAll('.quiz-option').forEach(function(b) {
+            b.disabled = true;
+          });
+          // Richtige Antwort grün hervorheben
+          const correctBtn = container.querySelector('[data-index="' + heutigeFrage.antwort + '"]');
+          if (correctBtn) correctBtn.classList.add('antwort-highlight');
         } else if (heutigeFrage.typ === 'freitext') {
-          isCorrect = (userAnswer.trim().toLowerCase() === heutigeFrage
-            .antwort.toLowerCase());
-          container.querySelector('.freitext-antwort').disabled = true;
-          container.querySelector('.freitext-pruefen').disabled = true;
+          isCorrect = (userAnswer.trim().toLowerCase() === heutigeFrage.antwort.toLowerCase());
+          const input = container.querySelector('.freitext-antwort');
+          const btn = container.querySelector('.freitext-pruefen');
+          if (input) input.disabled = true;
+          if (btn) btn.disabled = true;
         }
+
         if (isCorrect) {
-          feedbackBereich.innerHTML =
-            `<strong>Richtig!</strong> ${heutigeFrage.feedback}`;
+          feedbackBereich.innerHTML = '<strong>\u2713 Richtig!</strong> ' + heutigeFrage.feedback;
           feedbackBereich.className = 'feedback-bereich feedback-korrekt';
         } else {
-          feedbackBereich.innerHTML =
-            `<strong>Leider falsch.</strong> ${heutigeFrage.feedback}`;
+          let falschText = '<strong>\u2717 Leider falsch.</strong> ' + heutigeFrage.feedback;
+          if (heutigeFrage.typ === 'freitext') {
+            falschText += ' <em>Die richtige Antwort lautet: ' + heutigeFrage.antwort + '</em>';
+          }
+          feedbackBereich.innerHTML = falschText;
           feedbackBereich.className = 'feedback-bereich feedback-falsch';
         }
       }
@@ -585,4 +557,4 @@
       }
     })();
   </script>
-</p>
+</div>
