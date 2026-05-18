@@ -125,27 +125,57 @@
             display: none;
           }
           #${containerId} .feedback-korrekt {
-            color: #0a3622;
-            background-color: #d1e7dd;
-            border-left: 4px solid #198754;
+            color: #0a2a13;
+            background-color: #12db5c;
+            border-left: 4px solid #0d8a3f;
             border-radius: 0 5px 5px 0;
             padding: 12px 16px;
             margin-top: 16px;
             line-height: 1.5;
+            animation: qdtsSlideIn 250ms ease-out;
           }
           #${containerId} .feedback-falsch {
-            color: #58151c;
-            background-color: #f8d7da;
-            border-left: 4px solid #dc3545;
+            color: #ffffff;
+            background-color: #ed2626;
+            border-left: 4px solid #b00020;
             border-radius: 0 5px 5px 0;
             padding: 12px 16px;
             margin-top: 16px;
             line-height: 1.5;
+            animation: qdtsSlideIn 250ms ease-out;
+          }
+          #${containerId} .erklaerung {
+            display: block;
+            margin-top: 8px;
+            padding-top: 8px;
+            border-top: 1px solid rgba(255,255,255,0.35);
+            font-weight: 400;
+            font-size: 0.95em;
+            line-height: 1.5;
+          }
+          #${containerId} .feedback-korrekt .erklaerung {
+            border-top-color: rgba(10,42,19,0.25);
           }
           #${containerId} .antwort-highlight {
-            background-color: #d1e7dd !important;
-            border-color: #198754 !important;
+            background-color: #12db5c !important;
+            border-color: #0d8a3f !important;
+            color: #0a2a13 !important;
             font-weight: 700;
+            animation: qdtsPop 320ms ease-out;
+          }
+          @keyframes qdtsSlideIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to   { opacity: 1; transform: translateY(0); }
+          }
+          @keyframes qdtsPop {
+            0%   { transform: scale(1); }
+            50%  { transform: scale(1.06); }
+            100% { transform: scale(1); }
+          }
+          @media (prefers-reduced-motion: reduce) {
+            #${containerId} .feedback-korrekt,
+            #${containerId} .feedback-falsch,
+            #${containerId} .antwort-highlight { animation: none; }
           }
           @media (max-width: 480px) {
             #${containerId} .freitext-pruefen { width: 100%; }
@@ -166,7 +196,8 @@
           frage: 'Welcher Planet ist in unserem Sonnensystem der Sonne am nächsten?',
           optionen: ['Venus', 'Mars', 'Merkur', 'Erde'],
           antwort: 2,
-          feedback: 'Merkur ist der innerste und kleinste Planet in unserem Sonnensystem.'
+          feedback: 'Merkur ist der innerste und kleinste Planet in unserem Sonnensystem.',
+        erklaerung: 'Merkur umkreist die Sonne in nur 88 Tagen. Da er keine nennenswerte Atmosphäre besitzt, schwanken die Temperaturen zwischen über 400 °C tagsüber und unter -170 °C nachts.'
         },
         {
           typ: 'freitext',
@@ -179,14 +210,16 @@
           frage: 'Wer schrieb die berühmte Tragödie "Hamlet"?',
           optionen: ['Charles Dickens', 'William Shakespeare', 'Leo Tolstoi', 'Mark Twain'],
           antwort: 1,
-          feedback: '"Hamlet" ist eines der bekanntesten Werke von William Shakespeare.'
+          feedback: '"Hamlet" ist eines der bekanntesten Werke von William Shakespeare.',
+        erklaerung: 'Shakespeare verfasste "Hamlet" um 1600. Das Stück gilt als eines der einflussreichsten Werke der Weltliteratur und prägt mit dem Monolog "Sein oder Nichtsein" bis heute die Sprache.'
         },
         {
           typ: 'multiple-choice',
           frage: 'Was ist die Hauptstadt von Australien?',
           optionen: ['Sydney', 'Melbourne', 'Canberra', 'Perth'],
           antwort: 2,
-          feedback: 'Obwohl Sydney die größte Stadt ist, ist Canberra die Hauptstadt von Australien.'
+          feedback: 'Obwohl Sydney die größte Stadt ist, ist Canberra die Hauptstadt von Australien.',
+        erklaerung: 'Canberra wurde 1908 als Kompromiss zwischen den rivalisierenden Großstädten Sydney und Melbourne als Hauptstadt ausgewählt und am Reißbrett geplant.'
         },
         {
           typ: 'freitext',
@@ -245,7 +278,8 @@
           frage: 'Wer war der erste Mensch auf dem Mond?',
           optionen: ['Yuri Gagarin', 'Buzz Aldrin', 'Neil Armstrong', 'Michael Collins'],
           antwort: 2,
-          feedback: 'Neil Armstrong betrat 1969 als erster Mensch den Mond.'
+          feedback: 'Neil Armstrong betrat 1969 als erster Mensch den Mond.',
+        erklaerung: 'Am 21. Juli 1969 betrat Neil Armstrong im Rahmen der Apollo-11-Mission als Erster den Mond. Sein Satz "That ist a small step for a man, one giant leap for mankind" wurde weltberühmt.'
         },
         {
           typ: 'freitext',
@@ -305,7 +339,8 @@
           frage: 'In welchem Jahr fiel die Berliner Mauer?',
           optionen: ['1985', '1987', '1989', '1991'],
           antwort: 2,
-          feedback: 'Die Mauer fiel 1989.'
+          feedback: 'Die Mauer fiel 1989.',
+        erklaerung: 'Die Mauer fiel infolge friedlicher Massenproteste in der DDR und einer missverständlich verlesenen Reiseregelung am Abend des 9. November 1989. Damit begann der Prozess der deutschen Wiedervereinigung, vollzogen am 3. Oktober 1990.'
         },
         {
           typ: 'freitext',
@@ -358,7 +393,8 @@
           frage: 'Welche Sprache hat weltweit die meisten Muttersprachler?',
           optionen: ['Englisch', 'Mandarin-Chinesisch', 'Spanisch', 'Hindi'],
           antwort: 1,
-          feedback: 'Mandarin-Chinesisch hat die meisten Muttersprachler.'
+          feedback: 'Mandarin-Chinesisch hat die meisten Muttersprachler.',
+        erklaerung: 'Mandarin-Chinesisch sprechen rund 940 Millionen Menschen als Muttersprache, gefolgt von Spanisch und Englisch. Englisch hat aber – einschließlich Zweitsprecher – die meisten Sprecher insgesamt.'
         },
         {
           typ: 'freitext',
@@ -765,7 +801,8 @@
           frage: 'Wer schrieb "Romeo und Julia"?',
           optionen: ['Johann Wolfgang von Goethe', 'Friedrich Schiller', 'William Shakespeare', 'Molière'],
           antwort: 2,
-          feedback: '"Romeo und Julia" stammt von William Shakespeare.'
+          feedback: '"Romeo und Julia" stammt von William Shakespeare.',
+        erklaerung: 'Das Drama entstand um 1595 und gehört zu Shakespeares frühen Tragödien. Schauplatz ist Verona; die verfeindeten Familien Montague und Capulet sind seither Inbegriff sinnloser Familienfehden.'
         },
         {
           typ: 'freitext',
@@ -897,7 +934,8 @@
           frage: 'Wer komponierte die Mondscheinsonate?',
           optionen: ['Mozart', 'Beethoven', 'Bach', 'Schubert'],
           antwort: 1,
-          feedback: 'Die Mondscheinsonate stammt von Ludwig van Beethoven.'
+          feedback: 'Die Mondscheinsonate stammt von Ludwig van Beethoven.',
+        erklaerung: 'Beethovens Klaviersonate op. 27 Nr. 2 erschien 1801. Den Beinamen "Mondscheinsonate" prägte erst nach Beethovens Tod der Dichter Ludwig Rellstab, der den ersten Satz mit dem Vierwaldstättersee bei Mondschein verglich.'
         },
         {
           typ: 'freitext',
@@ -910,7 +948,8 @@
           frage: 'Welcher Berg gilt als höchster vollständig in Europa gelegener Berg?',
           optionen: ['Mont Blanc', 'Elbrus', 'Matterhorn', 'Zugspitze'],
           antwort: 1,
-          feedback: 'Der Elbrus im Kaukasus (5642 m) gilt geografisch als höchster Berg Europas.'
+          feedback: 'Der Elbrus im Kaukasus (5642 m) gilt geografisch als höchster Berg Europas.',
+        erklaerung: 'Der Elbrus (5642 m) im russischen Kaukasus ist ein ruhender Vulkan. Geografisch wird er meist zu Europa gezählt; nach anderer Definition gilt der Mont Blanc (4810 m) als höchster Berg Europas.'
         },
         {
           typ: 'multiple-choice',
@@ -930,7 +969,8 @@
           frage: 'Wer schrieb das Drama "Faust"?',
           optionen: ['Friedrich Schiller', 'Gotthold Ephraim Lessing', 'Johann Wolfgang von Goethe', 'Heinrich Heine'],
           antwort: 2,
-          feedback: '"Faust" wurde von Johann Wolfgang von Goethe verfasst.'
+          feedback: '"Faust" wurde von Johann Wolfgang von Goethe verfasst.',
+        erklaerung: 'Goethe arbeitete fast 60 Jahre an seinem "Faust". Der erste Teil erschien 1808, der zweite kurz vor seinem Tod 1832. Das Werk gilt als Schlüsseltext der deutschen Literatur.'
         },
         {
           typ: 'freitext',
@@ -950,7 +990,8 @@
           frage: 'In welcher Stadt liegt die antike Akropolis?',
           optionen: ['Rom', 'Istanbul', 'Athen', 'Kairo'],
           antwort: 2,
-          feedback: 'Die Akropolis steht in Athen.'
+          feedback: 'Die Akropolis steht in Athen.',
+        erklaerung: 'Die Akropolis erhebt sich im Zentrum Athens auf einem 156 m hohen Felsen. Das berühmteste Bauwerk, der Parthenon, wurde im 5. Jh. v. Chr. unter Perikles errichtet und der Göttin Athene geweiht.'
         },
         {
           typ: 'freitext',
@@ -963,7 +1004,8 @@
           frage: 'Wer entdeckte 1492 Amerika für Europa?',
           optionen: ['Ferdinand Magellan', 'Christoph Kolumbus', 'Vasco da Gama', 'Hernán Cortés'],
           antwort: 1,
-          feedback: 'Christoph Kolumbus erreichte 1492 die Karibik.'
+          feedback: 'Christoph Kolumbus erreichte 1492 die Karibik.',
+        erklaerung: 'Die Wikinger unter Leif Eriksson hatten Nordamerika bereits um 1000 erreicht. Die Fahrten von Kolumbus führten jedoch erstmals zu dauerhaftem Kontakt zwischen den Kontinenten – mit weitreichenden, oft verheerenden Folgen für die indigene Bevölkerung.'
         },
         {
           typ: 'freitext',
@@ -983,7 +1025,8 @@
           frage: 'Wer schrieb die Erzählung "Die Verwandlung"?',
           optionen: ['Hermann Hesse', 'Thomas Mann', 'Franz Kafka', 'Bertolt Brecht'],
           antwort: 2,
-          feedback: '"Die Verwandlung" stammt von Franz Kafka.'
+          feedback: '"Die Verwandlung" stammt von Franz Kafka.',
+        erklaerung: 'Kafkas Erzählung von 1915 beginnt mit dem berühmten Satz: "Als Gregor Samsa eines Morgens aus unruhigen Träumen erwachte, fand er sich in seinem Bett zu einem ungeheueren Ungeziefer verwandelt." Sie gilt als zentrales Werk der Moderne.'
         },
         {
           typ: 'freitext',
@@ -996,14 +1039,16 @@
           frage: 'Welcher Planet besitzt das auffälligste Ringsystem?',
           optionen: ['Jupiter', 'Saturn', 'Uranus', 'Neptun'],
           antwort: 1,
-          feedback: 'Saturns Ringe sind die ausgeprägtesten unseres Sonnensystems.'
+          feedback: 'Saturns Ringe sind die ausgeprägtesten unseres Sonnensystems.',
+        erklaerung: 'Die Saturnringe bestehen aus Milliarden Eis- und Gesteinsbrocken von Millimeter- bis Meter-Größe. Sie sind nur etwa 10–100 m dick, erstrecken sich aber über mehr als 280.000 km.'
         },
         {
           typ: 'multiple-choice',
           frage: 'Welches ist das einwohnerreichste Land der Welt?',
           optionen: ['USA', 'China', 'Indien', 'Russland'],
           antwort: 2,
-          feedback: 'Indien ist seit 2023 das bevölkerungsreichste Land der Welt.'
+          feedback: 'Indien ist seit 2023 das bevölkerungsreichste Land der Welt.',
+        erklaerung: 'Indien überholte China 2023 als bevölkerungsreichstes Land der Erde und hat heute über 1,4 Milliarden Einwohner. Die Bevölkerung wächst weiter, während Chinas seit Kurzem schrumpft.'
         },
         {
           typ: 'freitext',
@@ -1016,14 +1061,16 @@
           frage: 'Wer schuf die Deckenfresken der Sixtinischen Kapelle?',
           optionen: ['Raffael', 'Michelangelo', 'Leonardo da Vinci', 'Botticelli'],
           antwort: 1,
-          feedback: 'Michelangelo malte die Deckenfresken zwischen 1508 und 1512.'
+          feedback: 'Michelangelo malte die Deckenfresken zwischen 1508 und 1512.',
+        erklaerung: 'Michelangelo malte die Decke 1508–1512 im Auftrag von Papst Julius II. Auf rund 520 m² zeigt er Szenen aus der Genesis, darunter die berühmte "Erschaffung Adams".'
         },
         {
           typ: 'multiple-choice',
           frage: 'Wer formulierte die spezielle Relativitätstheorie?',
           optionen: ['Isaac Newton', 'Albert Einstein', 'Stephen Hawking', 'Niels Bohr'],
           antwort: 1,
-          feedback: 'Albert Einstein veröffentlichte die spezielle Relativitätstheorie 1905.'
+          feedback: 'Albert Einstein veröffentlichte die spezielle Relativitätstheorie 1905.',
+        erklaerung: 'Einstein veröffentlichte sie 1905 in seinem "Annus mirabilis". Sie zeigte, dass Zeit und Raum von der Bewegung des Beobachters abhängen und führte zur berühmten Formel E = mc².'
         },
         {
           typ: 'freitext',
@@ -1043,7 +1090,8 @@
           frage: 'Welches Organ produziert das Hormon Insulin?',
           optionen: ['Leber', 'Bauchspeicheldrüse', 'Niere', 'Magen'],
           antwort: 1,
-          feedback: 'Insulin wird in den Beta-Zellen der Bauchspeicheldrüse gebildet.'
+          feedback: 'Insulin wird in den Beta-Zellen der Bauchspeicheldrüse gebildet.',
+        erklaerung: 'Insulin wird in den Beta-Zellen der Langerhans-Inseln der Bauchspeicheldrüse gebildet. Es senkt den Blutzuckerspiegel; ein Mangel oder eine Resistenz führt zu Diabetes mellitus.'
         },
         {
           typ: 'freitext',
@@ -1056,14 +1104,16 @@
           frage: 'Welche Stadt liegt am Bosporus?',
           optionen: ['Athen', 'Istanbul', 'Beirut', 'Damaskus'],
           antwort: 1,
-          feedback: 'Istanbul liegt am Bosporus, der Europa und Asien trennt.'
+          feedback: 'Istanbul liegt am Bosporus, der Europa und Asien trennt.',
+        erklaerung: 'Istanbul ist die einzige Großstadt der Welt, die auf zwei Kontinenten liegt. Der Bosporus verbindet das Schwarze Meer mit dem Marmarameer und trennt den europäischen vom asiatischen Stadtteil.'
         },
         {
           typ: 'multiple-choice',
           frage: 'Wer verfasste die "Odyssee"?',
           optionen: ['Sophokles', 'Homer', 'Platon', 'Aristoteles'],
           antwort: 1,
-          feedback: 'Die Odyssee wird Homer zugeschrieben.'
+          feedback: 'Die Odyssee wird Homer zugeschrieben.',
+        erklaerung: 'Die Odyssee entstand vermutlich im 8. Jh. v. Chr. und erzählt die zehnjährige Heimkehr des Helden Odysseus nach dem Trojanischen Krieg. Sie zählt mit der Ilias zu den ältesten Werken der europäischen Literatur.'
         },
         {
           typ: 'freitext',
@@ -1089,21 +1139,24 @@
           typ: 'freitext',
           frage: 'In welchem Jahr begann der Zweite Weltkrieg?',
           antwort: '1939',
-          feedback: 'Der Zweite Weltkrieg begann am 1. September 1939.'
+          feedback: 'Der Zweite Weltkrieg begann am 1. September 1939.',
+        erklaerung: 'Mit dem deutschen Überfall auf Polen am 1. September 1939 begann der Zweite Weltkrieg. Er endete 1945 mit der bedingungslosen Kapitulation Deutschlands und Japans und kostete über 60 Millionen Menschen das Leben.'
         },
         {
           typ: 'multiple-choice',
           frage: 'Welche Krankheit wird durch das HI-Virus ausgelöst?',
           optionen: ['Krebs', 'AIDS', 'Tuberkulose', 'Pest'],
           antwort: 1,
-          feedback: 'Eine HIV-Infektion kann unbehandelt zu AIDS führen.'
+          feedback: 'Eine HIV-Infektion kann unbehandelt zu AIDS führen.',
+        erklaerung: 'HIV greift Immunzellen an und kann unbehandelt zum Vollbild AIDS führen. Dank moderner antiretroviraler Therapie ist HIV heute eine behandelbare chronische Erkrankung mit normaler Lebenserwartung.'
         },
         {
           typ: 'multiple-choice',
           frage: 'Wer komponierte die Oper "Die Zauberflöte"?',
           optionen: ['Wolfgang Amadeus Mozart', 'Richard Wagner', 'Giuseppe Verdi', 'Giacomo Puccini'],
           antwort: 0,
-          feedback: '"Die Zauberflöte" wurde 1791 von Mozart komponiert.'
+          feedback: '"Die Zauberflöte" wurde 1791 von Mozart komponiert.',
+        erklaerung: 'Mozarts "Zauberflöte" mit dem Libretto von Emanuel Schikaneder wurde 1791 in Wien uraufgeführt – nur zwei Monate vor Mozarts Tod. Sie verbindet Singspiel, Märchen und freimaurerische Symbolik.'
         },
         {
           typ: 'freitext',
@@ -1116,14 +1169,16 @@
           frage: 'Welche Programmiersprache wird hauptsächlich für die Interaktivität von Webseiten genutzt?',
           optionen: ['Python', 'Java', 'JavaScript', 'C++'],
           antwort: 2,
-          feedback: 'JavaScript ist die wichtigste Sprache für clientseitige Webinteraktion.'
+          feedback: 'JavaScript ist die wichtigste Sprache für clientseitige Webinteraktion.',
+        erklaerung: 'JavaScript wurde 1995 von Brendan Eich bei Netscape in nur zehn Tagen entworfen. Heute läuft es in jedem Browser und über Node.js auch serverseitig.'
         },
         {
           typ: 'multiple-choice',
           frage: 'In welchem Land entstand das Origami?',
           optionen: ['China', 'Korea', 'Japan', 'Vietnam'],
           antwort: 2,
-          feedback: 'Die Faltkunst Origami stammt aus Japan.'
+          feedback: 'Die Faltkunst Origami stammt aus Japan.',
+        erklaerung: 'Die Faltkunst Origami entwickelte sich in Japan ab dem 6. Jh. mit der Einführung des Papiers. Der Begriff setzt sich aus "oru" (falten) und "kami" (Papier) zusammen.'
         },
         {
           typ: 'freitext',
@@ -1136,14 +1191,16 @@
           frage: 'In welchem Jahr wurde der Vertrag von Maastricht unterzeichnet?',
           optionen: ['1985', '1992', '1995', '2000'],
           antwort: 1,
-          feedback: 'Der Vertrag von Maastricht wurde am 7. Februar 1992 unterzeichnet.'
+          feedback: 'Der Vertrag von Maastricht wurde am 7. Februar 1992 unterzeichnet.',
+        erklaerung: 'Der Maastrichter Vertrag begründete die Europäische Union als politische Gemeinschaft und ebnete den Weg zum Euro. Er trat am 1. November 1993 in Kraft.'
         },
         {
           typ: 'multiple-choice',
           frage: 'Welcher Maler schnitt sich nach einem Streit ein Stück seines Ohrs ab?',
           optionen: ['Pablo Picasso', 'Salvador Dalí', 'Vincent van Gogh', 'Claude Monet'],
           antwort: 2,
-          feedback: 'Vincent van Gogh verstümmelte sich 1888 sein linkes Ohr.'
+          feedback: 'Vincent van Gogh verstümmelte sich 1888 sein linkes Ohr.',
+        erklaerung: 'Van Gogh verstümmelte sich im Dezember 1888 in Arles nach einem heftigen Streit mit Paul Gauguin sein linkes Ohrläppchen. Er litt zeitlebens an psychischen Krisen und starb 1890 mit nur 37 Jahren.'
         },
         {
           typ: 'freitext',
@@ -1163,7 +1220,8 @@
           frage: 'Welches Element ist das häufigste im Universum?',
           optionen: ['Helium', 'Wasserstoff', 'Sauerstoff', 'Kohlenstoff'],
           antwort: 1,
-          feedback: 'Wasserstoff macht rund 75% der baryonischen Materie im Universum aus.'
+          feedback: 'Wasserstoff macht rund 75% der baryonischen Materie im Universum aus.',
+        erklaerung: 'Wasserstoff macht rund 75 % der baryonischen Materie aus und ist der Hauptbrennstoff der Sterne. Im Inneren der Sonne fusioniert Wasserstoff zu Helium und setzt dabei die Sonnenenergie frei.'
         },
         {
           typ: 'freitext',
@@ -1176,7 +1234,8 @@
           frage: 'Wer schrieb den dystopischen Roman "1984"?',
           optionen: ['Aldous Huxley', 'George Orwell', 'Ray Bradbury', 'H. G. Wells'],
           antwort: 1,
-          feedback: '"1984" wurde 1949 von George Orwell veröffentlicht.'
+          feedback: '"1984" wurde 1949 von George Orwell veröffentlicht.',
+        erklaerung: 'Orwells 1949 erschienener Roman beschreibt einen totalitären Überwachungsstaat unter "Big Brother". Begriffe wie "Neusprech" und "Doppeldenk" gingen in den allgemeinen Wortschatz ein.'
         },
         {
           typ: 'multiple-choice',
@@ -1196,7 +1255,8 @@
           frage: 'Welcher Wissenschaftler formulierte das Gravitationsgesetz?',
           optionen: ['Galileo Galilei', 'Isaac Newton', 'Johannes Kepler', 'Albert Einstein'],
           antwort: 1,
-          feedback: 'Isaac Newton formulierte das klassische Gravitationsgesetz.'
+          feedback: 'Isaac Newton formulierte das klassische Gravitationsgesetz.',
+        erklaerung: 'Newton veröffentlichte 1687 in den "Principia Mathematica" das Gesetz, nach dem sich zwei Massen mit einer Kraft proportional zu ihrem Produkt und umgekehrt proportional zum Quadrat ihres Abstands anziehen.'
         },
         {
           typ: 'multiple-choice',
@@ -1262,7 +1322,8 @@
           frage: 'Welches Vitamin bildet die Haut bei Sonnenlicht?',
           optionen: ['Vitamin A', 'Vitamin B12', 'Vitamin C', 'Vitamin D'],
           antwort: 3,
-          feedback: 'Unter UV-B-Einstrahlung bildet die Haut Vitamin D.'
+          feedback: 'Unter UV-B-Einstrahlung bildet die Haut Vitamin D.',
+        erklaerung: 'Unter UV-B-Strahlung wandelt die Haut 7-Dehydrocholesterol zu Vitamin D3 um. Vitamin D ist essenziell für den Calciumstoffwechsel und die Knochenmineralisierung; in nördlichen Breiten ist ein Mangel im Winter weit verbreitet.'
         },
         {
           typ: 'multiple-choice',
@@ -1316,7 +1377,8 @@
           frage: 'Welche Schlacht beendete 1815 die napoleonischen Kriege?',
           optionen: ['Austerlitz', 'Waterloo', 'Leipzig', 'Borodino'],
           antwort: 1,
-          feedback: 'Bei Waterloo wurde Napoleon 1815 endgültig besiegt.'
+          feedback: 'Bei Waterloo wurde Napoleon 1815 endgültig besiegt.',
+        erklaerung: 'Bei Waterloo (im heutigen Belgien) unterlag Napoleon einer britisch-preußischen Allianz unter Wellington und Blücher. Er wurde anschließend auf die Atlantikinsel St. Helena verbannt.'
         },
         {
           typ: 'freitext',
@@ -1329,14 +1391,16 @@
           frage: 'Welches Element hat die Ordnungszahl 79?',
           optionen: ['Silber', 'Gold', 'Platin', 'Quecksilber'],
           antwort: 1,
-          feedback: 'Gold (Au) hat die Ordnungszahl 79.'
+          feedback: 'Gold (Au) hat die Ordnungszahl 79.',
+        erklaerung: 'Gold ist chemisch außergewöhnlich beständig, korrodiert nicht und gilt seit der Antike als Wertaufbewahrungsmittel. Seine Dichte (19,3 g/cm³) macht es zu einem der schwersten Metalle.'
         },
         {
           typ: 'multiple-choice',
           frage: 'Wer schrieb den Roman "Krieg und Frieden"?',
           optionen: ['Fjodor Dostojewski', 'Lew Tolstoi', 'Anton Tschechow', 'Nikolai Gogol'],
           antwort: 1,
-          feedback: '"Krieg und Frieden" stammt von Lew Tolstoi.'
+          feedback: '"Krieg und Frieden" stammt von Lew Tolstoi.',
+        erklaerung: 'Tolstois Romanepos (1869) verwebt das Schicksal mehrerer russischer Adelsfamilien mit dem Russlandfeldzug Napoleons 1812. Mit über 1.200 Seiten gilt es als einer der größten Romane der Weltliteratur.'
         },
         {
           typ: 'freitext',
@@ -1369,27 +1433,31 @@
           frage: 'Wer formulierte die Unschärferelation der Quantenmechanik?',
           optionen: ['Niels Bohr', 'Erwin Schrödinger', 'Werner Heisenberg', 'Max Planck'],
           antwort: 2,
-          feedback: 'Werner Heisenberg formulierte die Unschärferelation 1927.'
+          feedback: 'Werner Heisenberg formulierte die Unschärferelation 1927.',
+        erklaerung: 'Heisenbergs Relation von 1927 besagt, dass Ort und Impuls eines Teilchens nicht gleichzeitig beliebig genau bestimmbar sind. Sie markiert eine fundamentale Grenze klassischer Vorhersagbarkeit.'
         },
         {
           typ: 'multiple-choice',
           frage: 'Wer schuf das Gemälde "Der Schrei"?',
           optionen: ['Edvard Munch', 'Gustav Klimt', 'Egon Schiele', 'Wassily Kandinsky'],
           antwort: 0,
-          feedback: '"Der Schrei" stammt vom norwegischen Maler Edvard Munch.'
+          feedback: '"Der Schrei" stammt vom norwegischen Maler Edvard Munch.',
+        erklaerung: 'Der norwegische Maler Edvard Munch schuf vier Versionen des Motivs zwischen 1893 und 1910. Es gilt als Inbegriff existenzieller Angst und als ein Schlüsselwerk des Expressionismus.'
         },
         {
           typ: 'freitext',
           frage: 'Welcher antike Philosoph verfasste das Werk "Politeia" (Der Staat)?',
           antwort: 'Platon',
-          feedback: 'Platon schrieb den Dialog "Politeia" über den idealen Staat.'
+          feedback: 'Platon schrieb den Dialog "Politeia" über den idealen Staat.',
+        erklaerung: 'In seinem Dialog "Politeia" (um 375 v. Chr.) entwirft Platon den Idealstaat unter der Herrschaft philosophischer Weisheit. Daraus stammt auch das berühmte Höhlengleichnis.'
         },
         {
           typ: 'multiple-choice',
           frage: 'In welchem Jahr eroberten die Osmanen Konstantinopel?',
           optionen: ['1389', '1453', '1492', '1521'],
           antwort: 1,
-          feedback: 'Konstantinopel fiel am 29. Mai 1453 an Sultan Mehmed II.'
+          feedback: 'Konstantinopel fiel am 29. Mai 1453 an Sultan Mehmed II.',
+        erklaerung: 'Mit dem Fall Konstantinopels am 29. Mai 1453 endete das tausendjährige Byzantinische Reich. Sultan Mehmed II. machte die Stadt zur Hauptstadt des Osmanischen Reiches.'
         },
         {
           typ: 'freitext',
@@ -1402,14 +1470,16 @@
           frage: 'Welche Erregerart verursachte die Spanische Grippe 1918?',
           optionen: ['Pockenvirus', 'Cholerabakterium', 'Influenzavirus', 'Pestbakterium'],
           antwort: 2,
-          feedback: 'Die Spanische Grippe wurde durch das Influenzavirus H1N1 verursacht.'
+          feedback: 'Die Spanische Grippe wurde durch das Influenzavirus H1N1 verursacht.',
+        erklaerung: 'Die Pandemie wurde durch das Influenzavirus H1N1 verursacht. Schätzungen zufolge starben weltweit 25–50 Millionen Menschen – mehr als im gesamten Ersten Weltkrieg.'
         },
         {
           typ: 'multiple-choice',
           frage: 'Wer schrieb den Roman "Der Process"?',
           optionen: ['Franz Kafka', 'Thomas Mann', 'Hermann Hesse', 'Bertolt Brecht'],
           antwort: 0,
-          feedback: '"Der Process" stammt von Franz Kafka.'
+          feedback: '"Der Process" stammt von Franz Kafka.',
+        erklaerung: 'Kafkas posthum 1925 von Max Brod veröffentlichter Roman handelt von Josef K., der ohne Anklage von einer unergründlichen Justiz verfolgt wird. Der Begriff "kafkaesk" geht auf solche Werke zurück.'
         },
         {
           typ: 'freitext',
@@ -1422,14 +1492,16 @@
           frage: 'In welchem Land liegt Machu Picchu?',
           optionen: ['Bolivien', 'Peru', 'Ecuador', 'Chile'],
           antwort: 1,
-          feedback: 'Machu Picchu liegt in den Anden Perus.'
+          feedback: 'Machu Picchu liegt in den Anden Perus.',
+        erklaerung: 'Die Inkastadt in den peruanischen Anden auf 2430 m wurde im 15. Jh. errichtet und im 16. Jh. aufgegeben. Hiram Bingham machte sie 1911 international bekannt; seit 1983 ist sie UNESCO-Welterbe.'
         },
         {
           typ: 'multiple-choice',
           frage: 'Welche Frequenz hat der Kammerton a¹ standardmäßig?',
           optionen: ['432 Hz', '440 Hz', '444 Hz', '450 Hz'],
           antwort: 1,
-          feedback: 'Der internationale Kammerton liegt bei 440 Hz.'
+          feedback: 'Der internationale Kammerton liegt bei 440 Hz.',
+        erklaerung: 'Seit der ISO-Normung 1939/1955 sind 440 Hz international gebräuchlich. Historisch und in der historischen Aufführungspraxis wurden auch tiefere Stimmungen (415 Hz, 432 Hz) verwendet.'
         },
         {
           typ: 'freitext',
@@ -1442,20 +1514,23 @@
           frage: 'Welche Säure ist im menschlichen Magen enthalten?',
           optionen: ['Schwefelsäure', 'Essigsäure', 'Salzsäure', 'Salpetersäure'],
           antwort: 2,
-          feedback: 'Der Magensaft enthält Salzsäure (HCl).'
+          feedback: 'Der Magensaft enthält Salzsäure (HCl).',
+        erklaerung: 'Der Magensaft enthält 0,1- bis 0,5-prozentige Salzsäure (HCl) mit pH 1–2. Sie aktiviert Verdauungsenzyme und tötet Krankheitserreger ab; die Magenschleimhaut schützt sich durch eine Schleimschicht.'
         },
         {
           typ: 'multiple-choice',
           frage: 'In welchem Land erfand Johannes Gutenberg den Buchdruck mit beweglichen Lettern?',
           optionen: ['Italien', 'England', 'Deutschland', 'Niederlande'],
           antwort: 2,
-          feedback: 'Gutenberg entwickelte den Druck mit beweglichen Lettern um 1450 in Mainz.'
+          feedback: 'Gutenberg entwickelte den Druck mit beweglichen Lettern um 1450 in Mainz.',
+        erklaerung: 'Gutenberg entwickelte um 1450 in Mainz den Druck mit auswechselbaren Bleilettern. Seine 42-zeilige Bibel von 1454 gilt als das erste Großwerk des Buchdrucks und revolutionierte die Wissensverbreitung in Europa.'
         },
         {
           typ: 'freitext',
           frage: 'Wer schrieb "Die göttliche Komödie"?',
           antwort: 'Dante',
-          feedback: 'Dante Alighieri verfasste "La Divina Commedia" im frühen 14. Jahrhundert.'
+          feedback: 'Dante Alighieri verfasste "La Divina Commedia" im frühen 14. Jahrhundert.',
+        erklaerung: 'Dante verfasste sein Versepos zwischen ca. 1307 und 1321. Es schildert in den drei Teilen Inferno, Purgatorio und Paradiso eine Jenseitsreise und gilt als Grundtext der italienischen Literatur.'
         },
         {
           typ: 'multiple-choice',
@@ -1482,14 +1557,16 @@
           frage: 'Welche Wissenschaftlerin erhielt als erste Person zwei Nobelpreise in unterschiedlichen Wissenschaften?',
           optionen: ['Albert Einstein', 'Marie Curie', 'Niels Bohr', 'Linus Pauling'],
           antwort: 1,
-          feedback: 'Marie Curie erhielt 1903 den Nobelpreis für Physik und 1911 den für Chemie.'
+          feedback: 'Marie Curie erhielt 1903 den Nobelpreis für Physik und 1911 den für Chemie.',
+        erklaerung: 'Marie Curie erhielt 1903 den Physik-Nobelpreis (mit Pierre Curie und Henri Becquerel) für die Erforschung der Radioaktivität und 1911 den Chemie-Nobelpreis für die Entdeckung von Polonium und Radium.'
         },
         {
           typ: 'multiple-choice',
           frage: 'Welcher europäische Krieg dauerte von 1618 bis 1648?',
           optionen: ['Hundertjähriger Krieg', 'Dreißigjähriger Krieg', 'Krimkrieg', 'Erster Weltkrieg'],
           antwort: 1,
-          feedback: 'Der Dreißigjährige Krieg (1618-1648) verheerte weite Teile Mitteleuropas.'
+          feedback: 'Der Dreißigjährige Krieg (1618-1648) verheerte weite Teile Mitteleuropas.',
+        erklaerung: 'Der Dreißigjährige Krieg begann als Konflikt zwischen Katholiken und Protestanten und entwickelte sich zum europäischen Großkrieg. Er wurde 1648 mit dem Westfälischen Frieden beendet und führte zu Bevölkerungsverlusten von bis zu einem Drittel in Teilen Deutschlands.'
         },
         {
           typ: 'freitext',
@@ -1502,14 +1579,16 @@
           frage: 'Welcher Mathematiker entwickelte unabhängig von Newton die Infinitesimalrechnung?',
           optionen: ['Leonhard Euler', 'Gottfried Wilhelm Leibniz', 'Carl Friedrich Gauß', 'Blaise Pascal'],
           antwort: 1,
-          feedback: 'Leibniz entwickelte die Infinitesimalrechnung parallel zu Newton.'
+          feedback: 'Leibniz entwickelte die Infinitesimalrechnung parallel zu Newton.',
+        erklaerung: 'Leibniz publizierte seine Notation der Differential- und Integralrechnung 1684. Die heute gebräuchlichen Zeichen dx, ∫ und d/dx stammen von ihm. Ein erbitterter Prioritätsstreit mit Newton überschattete sein Werk.'
         },
         {
           typ: 'multiple-choice',
           frage: 'Welcher Vertrag beendete formal den Ersten Weltkrieg?',
           optionen: ['Versailler Vertrag', 'Vertrag von Locarno', 'Wiener Kongress', 'Pariser Vorortverträge'],
           antwort: 0,
-          feedback: 'Der Versailler Vertrag wurde am 28. Juni 1919 unterzeichnet.'
+          feedback: 'Der Versailler Vertrag wurde am 28. Juni 1919 unterzeichnet.',
+        erklaerung: 'Der Versailler Vertrag wurde am 28. Juni 1919 unterzeichnet. Er erlegte Deutschland Gebietsverluste, Abrüstung und hohe Reparationen auf; viele Historiker sehen in seinen harten Bedingungen einen Wegbereiter des Zweiten Weltkriegs.'
         },
         {
           typ: 'freitext',
@@ -1522,7 +1601,8 @@
           frage: 'In welchem Jahr wurde die Sowjetunion offiziell aufgelöst?',
           optionen: ['1989', '1990', '1991', '1993'],
           antwort: 2,
-          feedback: 'Die UdSSR wurde am 26. Dezember 1991 offiziell aufgelöst.'
+          feedback: 'Die UdSSR wurde am 26. Dezember 1991 offiziell aufgelöst.',
+        erklaerung: 'Nach gescheitertem Augustputsch und Unabhängigkeitserklärungen der Teilrepubliken wurde die UdSSR am 26. Dezember 1991 offiziell aufgelöst. An ihre Stelle traten 15 souveräne Nachfolgestaaten.'
         },
         {
           typ: 'multiple-choice',
@@ -1542,14 +1622,16 @@
           frage: 'Welches Element gilt als das schwerste natürlich in größeren Mengen vorkommende?',
           optionen: ['Uran', 'Plutonium', 'Blei', 'Wismut'],
           antwort: 0,
-          feedback: 'Uran (Z=92) ist das schwerste in nennenswerter Menge in der Natur vorkommende Element.'
+          feedback: 'Uran (Z=92) ist das schwerste in nennenswerter Menge in der Natur vorkommende Element.',
+        erklaerung: 'Uran (Ordnungszahl 92) kommt in der Erdkruste vor allem als Pechblende vor. Seine Isotope sind radioaktiv; U-235 ist spaltbar und wird in Kernreaktoren und Kernwaffen genutzt.'
         },
         {
           typ: 'multiple-choice',
           frage: 'Wer malte "Sternennacht" (1889)?',
           optionen: ['Claude Monet', 'Vincent van Gogh', 'Paul Cézanne', 'Auguste Renoir'],
           antwort: 1,
-          feedback: '"Sternennacht" ist eines der berühmtesten Werke van Goghs.'
+          feedback: '"Sternennacht" ist eines der berühmtesten Werke van Goghs.',
+        erklaerung: 'Van Gogh malte das Werk in der Nervenheilanstalt von Saint-Rémy-de-Provence. Die wirbelnden Sterne über einem Provence-Dorf zählen zu den meistreproduzierten Motiven der Kunstgeschichte; das Bild hängt im MoMA in New York.'
         },
         {
           typ: 'freitext',
@@ -1562,34 +1644,39 @@
           frage: 'Wer war der erste römische Kaiser?',
           optionen: ['Julius Caesar', 'Augustus', 'Nero', 'Trajan'],
           antwort: 1,
-          feedback: 'Augustus (Gaius Octavius) gilt als erster römischer Kaiser ab 27 v. Chr.'
+          feedback: 'Augustus (Gaius Octavius) gilt als erster römischer Kaiser ab 27 v. Chr.',
+        erklaerung: 'Octavian, der Großneffe Caesars, erhielt 27 v. Chr. vom Senat den Ehrennamen Augustus ("der Erhabene"). Er begründete die Kaiserzeit und die "Pax Romana", eine über 200-jährige Periode innerer Stabilität.'
         },
         {
           typ: 'multiple-choice',
           frage: 'Welche Theorie erklärt die Bewegung der Kontinente?',
           optionen: ['Evolutionstheorie', 'Plattentektonik', 'Urknalltheorie', 'Quantentheorie'],
           antwort: 1,
-          feedback: 'Die Plattentektonik beschreibt die Bewegung der Lithosphärenplatten.'
+          feedback: 'Die Plattentektonik beschreibt die Bewegung der Lithosphärenplatten.',
+        erklaerung: 'Die Plattentektonik – als moderne Theorie ab den 1960er-Jahren etabliert – erklärt Erdbeben, Vulkanismus und Gebirgsbildung über die Bewegung lithosphärischer Platten. Sie geht auf Wegeners Idee der Kontinentaldrift (1912) zurück.'
         },
         {
           typ: 'freitext',
           frage: 'Welche russische Stadt hieß bis 1991 Leningrad?',
           antwort: 'Sankt Petersburg',
-          feedback: 'Leningrad wurde 1991 in Sankt Petersburg umbenannt.'
+          feedback: 'Leningrad wurde 1991 in Sankt Petersburg umbenannt.',
+        erklaerung: 'Die von Peter dem Großen 1703 als "Fenster nach Europa" gegründete Stadt hieß zunächst Sankt Petersburg, von 1914–1924 Petrograd, dann bis 1991 Leningrad. Im Zweiten Weltkrieg überstand sie eine fast 900-tägige deutsche Blockade.'
         },
         {
           typ: 'multiple-choice',
           frage: 'Wer schrieb den Roman "Don Quijote"?',
           optionen: ['Miguel de Cervantes', 'Lope de Vega', 'Pedro Calderón', 'Federico García Lorca'],
           antwort: 0,
-          feedback: '"Don Quijote" stammt von Miguel de Cervantes (1605/1615).'
+          feedback: '"Don Quijote" stammt von Miguel de Cervantes (1605/1615).',
+        erklaerung: 'Das Werk "El ingenioso hidalgo Don Quijote de la Mancha" (1605/1615) von Cervantes parodiert die Ritterromane seiner Zeit und gilt als erster moderner Roman der Weltliteratur.'
         },
         {
           typ: 'multiple-choice',
           frage: 'Welche Stadt ist die Hauptstadt Aserbaidschans?',
           optionen: ['Tiflis', 'Baku', 'Jerewan', 'Taschkent'],
           antwort: 1,
-          feedback: 'Baku am Kaspischen Meer ist die Hauptstadt Aserbaidschans.'
+          feedback: 'Baku am Kaspischen Meer ist die Hauptstadt Aserbaidschans.',
+        erklaerung: 'Baku am Kaspischen Meer hat dank seiner Erdöl- und Erdgasvorkommen einen rasanten architektonischen Wandel erlebt. Die Altstadt mit dem Jungfrauenturm zählt seit 2000 zum UNESCO-Welterbe.'
         },
         {
           typ: 'freitext',
@@ -1602,14 +1689,16 @@
           frage: 'Welche Komposition Bachs trägt die Werknummer BWV 565?',
           optionen: ['Goldberg-Variationen', 'Toccata und Fuge in d-Moll', 'h-Moll-Messe', 'Brandenburgisches Konzert Nr. 3'],
           antwort: 1,
-          feedback: 'BWV 565 ist die berühmte Toccata und Fuge in d-Moll.'
+          feedback: 'BWV 565 ist die berühmte Toccata und Fuge in d-Moll.',
+        erklaerung: 'Die Toccata und Fuge in d-Moll ist eines der bekanntesten Orgelwerke überhaupt. Ihre Zuschreibung an Bach ist allerdings bis heute umstritten – einige Musikwissenschaftler vermuten einen unbekannten Zeitgenossen.'
         },
         {
           typ: 'multiple-choice',
           frage: 'Welches Land hat – inklusive Überseegebieten – die meisten Zeitzonen?',
           optionen: ['USA', 'Russland', 'Frankreich', 'China'],
           antwort: 2,
-          feedback: 'Frankreich deckt mit seinen Überseegebieten 12 Zeitzonen ab.'
+          feedback: 'Frankreich deckt mit seinen Überseegebieten 12 Zeitzonen ab.',
+        erklaerung: 'Frankreich erstreckt sich mit seinen Überseegebieten von Polynesien bis Französisch-Guayana über 12 Zeitzonen – mehr als Russland (11) oder die USA (11).'
         },
         {
           typ: 'freitext',
@@ -1622,14 +1711,16 @@
           frage: 'Wer veröffentlichte 1543 ein bahnbrechendes Werk zum heliozentrischen Weltbild?',
           optionen: ['Galileo Galilei', 'Johannes Kepler', 'Nikolaus Kopernikus', 'Tycho Brahe'],
           antwort: 2,
-          feedback: 'Kopernikus stellte 1543 in "De revolutionibus orbium coelestium" das heliozentrische Modell vor.'
+          feedback: 'Kopernikus stellte 1543 in "De revolutionibus orbium coelestium" das heliozentrische Modell vor.',
+        erklaerung: 'Das Werk "De revolutionibus orbium coelestium" von Kopernikus erschien im Todesjahr des Autors. Es stellte die seit der Antike geltende geozentrische Weltsicht in Frage und löste eine wissenschaftliche Revolution aus.'
         },
         {
           typ: 'multiple-choice',
           frage: 'Welcher Regisseur drehte "2001: Odyssee im Weltraum"?',
           optionen: ['George Lucas', 'Stanley Kubrick', 'Francis Ford Coppola', 'Ridley Scott'],
           antwort: 1,
-          feedback: 'Stanley Kubrick führte 1968 bei "2001: A Space Odyssey" Regie.'
+          feedback: 'Stanley Kubrick führte 1968 bei "2001: A Space Odyssey" Regie.',
+        erklaerung: 'Kubricks 1968 erschienener Film entstand in Zusammenarbeit mit dem Science-Fiction-Autor Arthur C. Clarke. Bahnbrechende Spezialeffekte und die Verwendung klassischer Musik – etwa von Richard Strauss mit "Also sprach Zarathustra" – prägen seinen Kult-Status.'
         },
         {
           typ: 'freitext',
@@ -1642,14 +1733,16 @@
           frage: 'Welche Sprache hat das längste Alphabet der Welt?',
           optionen: ['Russisch', 'Khmer', 'Chinesisch', 'Hindi'],
           antwort: 1,
-          feedback: 'Das Khmer-Alphabet umfasst rund 74 Zeichen und gilt als längstes Alphabet.'
+          feedback: 'Das Khmer-Alphabet umfasst rund 74 Zeichen und gilt als längstes Alphabet.',
+        erklaerung: 'Das Khmer-Alphabet, das in Kambodscha verwendet wird, umfasst 33 Konsonanten und 21 Vokale (sowie weitere Sonderzeichen) – insgesamt rund 74 Zeichen. Es ist im Guinness-Buch als längstes Alphabet verzeichnet.'
         },
         {
           typ: 'multiple-choice',
           frage: 'Wer begründete die Psychoanalyse?',
           optionen: ['Carl Gustav Jung', 'Sigmund Freud', 'Alfred Adler', 'B. F. Skinner'],
           antwort: 1,
-          feedback: 'Sigmund Freud gilt als Begründer der Psychoanalyse.'
+          feedback: 'Sigmund Freud gilt als Begründer der Psychoanalyse.',
+        erklaerung: 'Sigmund Freud entwickelte ab den 1890er-Jahren in Wien die Psychoanalyse als Methode zur Erforschung des Unbewussten. Konzepte wie Es, Ich und Über-Ich sowie die Traumdeutung prägen die Psychologie bis heute.'
         },
         {
           typ: 'freitext',
@@ -1662,7 +1755,8 @@
           frage: 'Welcher Vertrag begründete 1957 die Europäische Wirtschaftsgemeinschaft (EWG)?',
           optionen: ['Vertrag von Maastricht', 'Römische Verträge', 'Vertrag von Lissabon', 'Pariser Vertrag'],
           antwort: 1,
-          feedback: 'Die Römischen Verträge wurden am 25. März 1957 unterzeichnet.'
+          feedback: 'Die Römischen Verträge wurden am 25. März 1957 unterzeichnet.',
+        erklaerung: 'Die Römischen Verträge wurden am 25. März 1957 von Deutschland, Frankreich, Italien, Belgien, den Niederlanden und Luxemburg unterzeichnet. Sie schufen den europäischen Binnenmarkt als Keimzelle der heutigen EU.'
         },
         {
           typ: 'multiple-choice',
@@ -1675,20 +1769,23 @@
           typ: 'freitext',
           frage: 'Welcher italienische Komponist schrieb "Die vier Jahreszeiten"?',
           antwort: 'Vivaldi',
-          feedback: 'Antonio Vivaldi komponierte "Le quattro stagioni" um 1725.'
+          feedback: 'Antonio Vivaldi komponierte "Le quattro stagioni" um 1725.',
+        erklaerung: 'Vivaldi veröffentlichte den Zyklus von vier Violinkonzerten um 1725. Jedem Konzert ist ein Sonett vorangestellt; die Musik illustriert konkret Vogelgezwitscher, Donner oder schlitternde Schritte auf Eis – früher Programmusik.'
         },
         {
           typ: 'multiple-choice',
           frage: 'Welche Stadt war die Hauptstadt des Byzantinischen Reiches?',
           optionen: ['Athen', 'Konstantinopel', 'Rom', 'Alexandria'],
           antwort: 1,
-          feedback: 'Konstantinopel (heute Istanbul) war Hauptstadt des Byzantinischen Reiches.'
+          feedback: 'Konstantinopel (heute Istanbul) war Hauptstadt des Byzantinischen Reiches.',
+        erklaerung: 'Konstantinopel – das antike Byzanz – wurde 330 von Kaiser Konstantin zur "Neuen Rom" und Hauptstadt des Oströmischen Reiches erhoben. Über tausend Jahre lang war es die größte Stadt Europas, bis sie 1453 an die Osmanen fiel.'
         },
         {
           typ: 'freitext',
           frage: 'Welche Pflanze stand 1637 im Zentrum des berühmten Spekulationsfiebers in den Niederlanden?',
           antwort: 'Tulpe',
-          feedback: 'Die "Tulpenmanie" 1637 gilt als eine der ersten Spekulationsblasen der Geschichte.'
+          feedback: 'Die "Tulpenmanie" 1637 gilt als eine der ersten Spekulationsblasen der Geschichte.',
+        erklaerung: 'Während der "Tulpenmanie" wurden seltene Tulpenzwiebeln zu astronomischen Preisen gehandelt – eine einzelne Zwiebel konnte das Mehrfache eines Amsterdamer Stadthauses kosten. Der Crash im Februar 1637 gilt als erste dokumentierte Spekulationsblase.'
         },
         {
           typ: 'multiple-choice',
@@ -1728,7 +1825,8 @@
           frage: 'Welcher Wissenschaftler entwickelte das Periodensystem der Elemente?',
           optionen: ['Marie Curie', 'Dmitri Mendelejew', 'Alfred Nobel', 'Linus Pauling'],
           antwort: 1,
-          feedback: 'Dmitri Mendelejew veröffentlichte 1869 die erste Version des Periodensystems.'
+          feedback: 'Dmitri Mendelejew veröffentlichte 1869 die erste Version des Periodensystems.',
+        erklaerung: 'Mendelejew ordnete die 1869 bekannten Elemente nach Atommasse und chemischen Eigenschaften. Er ließ Lücken für noch unentdeckte Elemente und sagte deren Eigenschaften korrekt voraus – etwa für Gallium und Germanium.'
         },
         {
           typ: 'multiple-choice',
@@ -1755,7 +1853,8 @@
           frage: 'Welches Tier hat den längsten bekannten Lebenszyklus unter den Wirbeltieren?',
           optionen: ['Galapagos-Riesenschildkröte', 'Grönlandhai', 'Bowhead-Wal', 'Aldabra-Schildkröte'],
           antwort: 1,
-          feedback: 'Der Grönlandhai kann über 300 Jahre alt werden.'
+          feedback: 'Der Grönlandhai kann über 300 Jahre alt werden.',
+        erklaerung: 'Der Grönlandhai (Somniosus microcephalus) lebt in arktischen Gewässern und kann über 300 Jahre alt werden. Er wächst extrem langsam und erreicht die Geschlechtsreife erst mit etwa 150 Jahren.'
         },
         {
           typ: 'freitext',
@@ -1801,14 +1900,16 @@
           frage: 'Welcher Mathematiker bewies die Unmöglichkeit der allgemeinen Lösung der Gleichung 5. Grades durch Radikale?',
           optionen: ['Niels Henrik Abel', 'Évariste Galois', 'Carl Friedrich Gauß', 'Augustin-Louis Cauchy'],
           antwort: 0,
-          feedback: 'Abel bewies 1824 die Unlösbarkeit der allgemeinen quintischen Gleichung durch Radikale.'
+          feedback: 'Abel bewies 1824 die Unlösbarkeit der allgemeinen quintischen Gleichung durch Radikale.',
+        erklaerung: 'Der norwegische Mathematiker Niels Henrik Abel bewies 1824, dass es für die allgemeine Polynomgleichung 5. Grades keine Lösungsformel mit Wurzeln und Grundrechenarten geben kann. Er starb 1829 mit nur 26 Jahren an Tuberkulose.'
         },
         {
           typ: 'multiple-choice',
           frage: 'Welches Land erfand das Papier?',
           optionen: ['Ägypten', 'China', 'Indien', 'Griechenland'],
           antwort: 1,
-          feedback: 'Das Papier wurde im antiken China erfunden (Cai Lun, ca. 105 n. Chr.).'
+          feedback: 'Das Papier wurde im antiken China erfunden (Cai Lun, ca. 105 n. Chr.).',
+        erklaerung: 'Die Erfindung des Papiers wird traditionell dem chinesischen Hofbeamten Cai Lun (um 105 n. Chr.) zugeschrieben. Über die Seidenstraße und arabische Vermittler erreichte die Technik erst im 13. Jh. Europa.'
         },
         {
           typ: 'freitext',
@@ -1834,21 +1935,24 @@
           typ: 'freitext',
           frage: 'Wer war die erste Frau im Weltall?',
           antwort: 'Walentina Tereschkowa',
-          feedback: 'Walentina Tereschkowa flog 1963 als erste Frau ins Weltall.'
+          feedback: 'Walentina Tereschkowa flog 1963 als erste Frau ins Weltall.',
+        erklaerung: 'Die sowjetische Kosmonautin Walentina Tereschkowa umkreiste 1963 mit Wostok 6 in knapp drei Tagen 48 Mal die Erde. Bis Sally Ride 1983 sollte es noch 20 Jahre bis zur nächsten Frau im All dauern.'
         },
         {
           typ: 'multiple-choice',
           frage: 'Welches Lebewesen produziert über die Hälfte des Sauerstoffs der Erde?',
           optionen: ['Wälder', 'Algen und Phytoplankton', 'Moose', 'Gräser'],
           antwort: 1,
-          feedback: 'Marine Algen und Phytoplankton produzieren über die Hälfte des Sauerstoffs der Erde.'
+          feedback: 'Marine Algen und Phytoplankton produzieren über die Hälfte des Sauerstoffs der Erde.',
+        erklaerung: 'Marine Algen und Phytoplankton – winzige photosynthetische Organismen im Ozean – produzieren rund 50–80 % des atmosphärischen Sauerstoffs. Sie sind damit für das Leben an Land genauso bedeutsam wie alle Wälder zusammen.'
         },
         {
           typ: 'multiple-choice',
           frage: 'Wer schrieb "Hundert Jahre Einsamkeit"?',
           optionen: ['Mario Vargas Llosa', 'Gabriel García Márquez', 'Jorge Luis Borges', 'Pablo Neruda'],
           antwort: 1,
-          feedback: 'Gabriel García Márquez veröffentlichte den Roman 1967.'
+          feedback: 'Gabriel García Márquez veröffentlichte den Roman 1967.',
+        erklaerung: 'García Márquez veröffentlichte sein magisch-realistisches Hauptwerk 1967. Es erzählt sieben Generationen der Familie Buendía im fiktiven Macondo und brachte ihm 1982 den Literaturnobelpreis ein.'
         },
         {
           typ: 'freitext',
@@ -1949,15 +2053,18 @@
           if (btn) btn.disabled = true;
         }
 
+        const erklaerungHtml = heutigeFrage.erklaerung
+          ? '<span class="erklaerung">' + heutigeFrage.erklaerung + '</span>'
+          : '';
         if (isCorrect) {
-          feedbackBereich.innerHTML = '<strong>\u2713 Richtig!</strong> ' + heutigeFrage.feedback;
+          feedbackBereich.innerHTML = '<strong>\u2713 Richtig!</strong> ' + heutigeFrage.feedback + erklaerungHtml;
           feedbackBereich.className = 'feedback-bereich feedback-korrekt';
         } else {
           let falschText = '<strong>\u2717 Leider falsch.</strong> ' + heutigeFrage.feedback;
           if (heutigeFrage.typ === 'freitext') {
             falschText += ' <em>Die richtige Antwort lautet: ' + heutigeFrage.antwort + '</em>';
           }
-          feedbackBereich.innerHTML = falschText;
+          feedbackBereich.innerHTML = falschText + erklaerungHtml;
           feedbackBereich.className = 'feedback-bereich feedback-falsch';
         }
       }
