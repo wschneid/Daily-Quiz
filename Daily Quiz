@@ -452,6 +452,1317 @@
           frage: 'Welcher Kontinent ist sowohl ein Land als auch ein Kontinent?',
           antwort: 'Australien',
           feedback: 'Australien ist sowohl ein Land als auch ein Kontinent.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welche Farbe entsteht, wenn man Blau und Gelb mischt?',
+          optionen: ['Rot', 'Grün', 'Orange', 'Lila'],
+          antwort: 1,
+          feedback: 'Blau und Gelb ergeben in der Mischung Grün.'
+        },
+        {
+          typ: 'freitext',
+          frage: 'Wie viele Beine hat eine Spinne?',
+          antwort: '8',
+          feedback: 'Spinnen besitzen acht Beine und gehören zu den Spinnentieren.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welches ist das größte Säugetier der Welt?',
+          optionen: ['Afrikanischer Elefant', 'Blauwal', 'Giraffe', 'Nilpferd'],
+          antwort: 1,
+          feedback: 'Der Blauwal kann über 30 Meter lang und 150 Tonnen schwer werden.'
+        },
+        {
+          typ: 'freitext',
+          frage: 'Wie viele Buchstaben hat das deutsche Standardalphabet ohne Umlaute und ß?',
+          antwort: '26',
+          feedback: 'Das lateinische Grundalphabet umfasst 26 Buchstaben.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'In welchem Land steht der Eiffelturm?',
+          optionen: ['Italien', 'Spanien', 'Frankreich', 'Belgien'],
+          antwort: 2,
+          feedback: 'Der Eiffelturm steht in Paris, Frankreich.'
+        },
+        {
+          typ: 'freitext',
+          frage: 'Wie viele Monate hat ein Jahr?',
+          antwort: '12',
+          feedback: 'Das gregorianische Kalenderjahr besteht aus 12 Monaten.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Wie heißt der größte Ozean der Erde?',
+          optionen: ['Atlantik', 'Pazifik', 'Indischer Ozean', 'Arktischer Ozean'],
+          antwort: 1,
+          feedback: 'Der Pazifik bedeckt rund ein Drittel der Erdoberfläche.'
+        },
+        {
+          typ: 'freitext',
+          frage: 'Wie viele Spieler hat eine Fußballmannschaft auf dem Feld?',
+          antwort: '11',
+          feedback: 'Im Fußball stehen pro Team 11 Spieler auf dem Platz.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welche Sprache spricht man als Amtssprache in Brasilien?',
+          optionen: ['Spanisch', 'Portugiesisch', 'Französisch', 'Englisch'],
+          antwort: 1,
+          feedback: 'Portugiesisch ist die Amtssprache Brasiliens.'
+        },
+        {
+          typ: 'freitext',
+          frage: 'Wie viele Sekunden hat eine Minute?',
+          antwort: '60',
+          feedback: 'Eine Minute besteht aus 60 Sekunden.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Was ist die Hauptstadt Italiens?',
+          optionen: ['Mailand', 'Rom', 'Neapel', 'Venedig'],
+          antwort: 1,
+          feedback: 'Rom ist die Hauptstadt Italiens.'
+        },
+        {
+          typ: 'freitext',
+          frage: 'Wie heißt der Planet, auf dem wir leben?',
+          antwort: 'Erde',
+          feedback: 'Wir leben auf dem dritten Planeten unseres Sonnensystems, der Erde.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welche Form hat ein Fußball?',
+          optionen: ['Würfel', 'Kugel', 'Zylinder', 'Pyramide'],
+          antwort: 1,
+          feedback: 'Ein Fußball ist annähernd eine Kugel.'
+        },
+        {
+          typ: 'freitext',
+          frage: 'Wie viele Finger hat ein Mensch an einer Hand?',
+          antwort: '5',
+          feedback: 'Ein Mensch hat an einer Hand fünf Finger.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welches europäische Land hat die Form eines Stiefels?',
+          optionen: ['Spanien', 'Italien', 'Griechenland', 'Türkei'],
+          antwort: 1,
+          feedback: 'Italien wird wegen seiner Form oft als Stiefel bezeichnet.'
+        },
+        {
+          typ: 'freitext',
+          frage: 'Wie heißt das oberste Stockwerk eines Hauses unter dem Dach?',
+          antwort: 'Dachgeschoss',
+          feedback: 'Das oberste Stockwerk unter dem Dach heißt Dachgeschoss.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welche Jahreszeit folgt auf den Frühling?',
+          optionen: ['Herbst', 'Winter', 'Sommer', 'Frühjahr'],
+          antwort: 2,
+          feedback: 'Auf den Frühling folgt der Sommer.'
+        },
+        {
+          typ: 'freitext',
+          frage: 'Wie viele Räder hat ein klassisches Fahrrad?',
+          antwort: '2',
+          feedback: 'Ein Fahrrad hat zwei Räder.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welches Metall wird vom Magneten angezogen?',
+          optionen: ['Gold', 'Silber', 'Eisen', 'Kupfer'],
+          antwort: 2,
+          feedback: 'Eisen ist ferromagnetisch und wird vom Magneten angezogen.'
+        },
+        {
+          typ: 'freitext',
+          frage: 'Wie lautet das chemische Symbol für Gold?',
+          antwort: 'Au',
+          feedback: 'Das chemische Symbol für Gold ist Au (von lateinisch aurum).'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welche Stadt ist die Hauptstadt Spaniens?',
+          optionen: ['Lissabon', 'Madrid', 'Barcelona', 'Sevilla'],
+          antwort: 1,
+          feedback: 'Madrid ist die Hauptstadt Spaniens.'
+        },
+        {
+          typ: 'freitext',
+          frage: 'Wie viele Kontinente gibt es nach gängiger Zählung?',
+          antwort: '7',
+          feedback: 'Üblicherweise unterscheidet man sieben Kontinente.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Wer malte die Mona Lisa?',
+          optionen: ['Vincent van Gogh', 'Pablo Picasso', 'Leonardo da Vinci', 'Michelangelo'],
+          antwort: 2,
+          feedback: 'Die Mona Lisa wurde von Leonardo da Vinci gemalt.'
+        },
+        {
+          typ: 'freitext',
+          frage: 'Wie heißt das flächenmäßig größte Land der Erde?',
+          antwort: 'Russland',
+          feedback: 'Russland ist mit rund 17 Mio. km² das größte Land der Erde.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welches Gas atmen Menschen hauptsächlich aus?',
+          optionen: ['Sauerstoff', 'Wasserstoff', 'Kohlendioxid', 'Helium'],
+          antwort: 2,
+          feedback: 'Beim Ausatmen geben wir vor allem Kohlendioxid (CO2) ab.'
+        },
+        {
+          typ: 'freitext',
+          frage: 'Welches Nutztier liefert die Milch, die wir am häufigsten trinken?',
+          antwort: 'Kuh',
+          feedback: 'Den größten Anteil der Trinkmilch liefert die Kuh.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welcher Vogel kann nicht fliegen?',
+          optionen: ['Adler', 'Pinguin', 'Taube', 'Sperling'],
+          antwort: 1,
+          feedback: 'Pinguine sind flugunfähige Vögel, aber hervorragende Schwimmer.'
+        },
+        {
+          typ: 'freitext',
+          frage: 'Wie viele Zähne hat ein erwachsener Mensch normalerweise (mit Weisheitszähnen)?',
+          antwort: '32',
+          feedback: 'Ein erwachsenes Gebiss umfasst inkl. Weisheitszähne 32 Zähne.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'In welchem Erdteil liegt Ägypten?',
+          optionen: ['Asien', 'Europa', 'Afrika', 'Amerika'],
+          antwort: 2,
+          feedback: 'Ägypten liegt im Nordosten Afrikas.'
+        },
+        {
+          typ: 'freitext',
+          frage: 'Was ergibt 7 mal 8?',
+          antwort: '56',
+          feedback: '7 multipliziert mit 8 ergibt 56.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welches Tier ist das schnellste an Land?',
+          optionen: ['Pferd', 'Gepard', 'Windhund', 'Strauß'],
+          antwort: 1,
+          feedback: 'Der Gepard erreicht im Sprint bis zu 110 km/h.'
+        },
+        {
+          typ: 'freitext',
+          frage: 'In welchem Monat hat ein Schaltjahr einen Tag mehr?',
+          antwort: 'Februar',
+          feedback: 'Im Schaltjahr hat der Februar 29 statt 28 Tage.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Wer schrieb "Romeo und Julia"?',
+          optionen: ['Johann Wolfgang von Goethe', 'Friedrich Schiller', 'William Shakespeare', 'Molière'],
+          antwort: 2,
+          feedback: '"Romeo und Julia" stammt von William Shakespeare.'
+        },
+        {
+          typ: 'freitext',
+          frage: 'Wie heißt unser Zentralgestirn?',
+          antwort: 'Sonne',
+          feedback: 'Die Sonne ist das Zentralgestirn unseres Sonnensystems.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welche Stadt ist die Hauptstadt Japans?',
+          optionen: ['Peking', 'Seoul', 'Tokio', 'Bangkok'],
+          antwort: 2,
+          feedback: 'Tokio ist die Hauptstadt Japans.'
+        },
+        {
+          typ: 'freitext',
+          frage: 'Wie viele Stunden hat ein Tag?',
+          antwort: '24',
+          feedback: 'Ein Tag umfasst 24 Stunden.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welches Werkzeug zeigt traditionell magnetisch nach Norden?',
+          optionen: ['Lupe', 'Kompass', 'Sextant', 'Lineal'],
+          antwort: 1,
+          feedback: 'Die Magnetnadel eines Kompasses richtet sich am Erdmagnetfeld aus.'
+        },
+        {
+          typ: 'freitext',
+          frage: 'Wie heißt der längste Fluss Südamerikas?',
+          antwort: 'Amazonas',
+          feedback: 'Der Amazonas ist der längste Fluss Südamerikas.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Wie nennt man ein junges Pferd?',
+          optionen: ['Kalb', 'Fohlen', 'Welpe', 'Lamm'],
+          antwort: 1,
+          feedback: 'Ein junges Pferd nennt man Fohlen.'
+        },
+        {
+          typ: 'freitext',
+          frage: 'Wie viele Beine hat ein Insekt?',
+          antwort: '6',
+          feedback: 'Insekten haben sechs Beine.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welches Verkehrsmittel fährt auf Schienen?',
+          optionen: ['Auto', 'Zug', 'Schiff', 'Flugzeug'],
+          antwort: 1,
+          feedback: 'Züge fahren auf Schienen.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welches Tier ist berühmt für seinen langen Hals?',
+          optionen: ['Esel', 'Elefant', 'Giraffe', 'Krokodil'],
+          antwort: 2,
+          feedback: 'Die Giraffe ist das größte Landlebewesen mit dem längsten Hals.'
+        },
+        {
+          typ: 'freitext',
+          frage: 'Wie heißt das Gegenteil von "hell"?',
+          antwort: 'dunkel',
+          feedback: 'Das Gegenteil von hell ist dunkel.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welches Element hat 78% Anteil an unserer Atemluft?',
+          optionen: ['Sauerstoff', 'Wasserstoff', 'Stickstoff', 'Argon'],
+          antwort: 2,
+          feedback: 'Die Luft besteht zu rund 78% aus Stickstoff.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welche Farbe steht im Regenbogen ganz außen oben?',
+          optionen: ['Rot', 'Grün', 'Blau', 'Violett'],
+          antwort: 0,
+          feedback: 'Beim Regenbogen liegt Rot außen oben, Violett innen.'
+        },
+        {
+          typ: 'freitext',
+          frage: 'Welches Tier wird der "König der Tiere" genannt?',
+          antwort: 'Löwe',
+          feedback: 'Der Löwe gilt traditionell als König der Tiere.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welches Tier hat einen Rüssel?',
+          optionen: ['Tiger', 'Elefant', 'Bär', 'Nashorn'],
+          antwort: 1,
+          feedback: 'Der Elefant nutzt seinen Rüssel als Greif- und Riechorgan.'
+        },
+        {
+          typ: 'freitext',
+          frage: 'Wie viele Tage hat eine Woche?',
+          antwort: '7',
+          feedback: 'Eine Woche besteht aus sieben Tagen.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welcher Tag folgt direkt auf den Mittwoch?',
+          optionen: ['Dienstag', 'Donnerstag', 'Freitag', 'Montag'],
+          antwort: 1,
+          feedback: 'Auf Mittwoch folgt Donnerstag.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'In welchem Jahr fiel die Berliner Mauer?',
+          optionen: ['1987', '1989', '1991', '1995'],
+          antwort: 1,
+          feedback: 'Die Berliner Mauer fiel am 9. November 1989.'
+        },
+        {
+          typ: 'freitext',
+          frage: 'Wer war der griechische Göttervater des Olymps?',
+          antwort: 'Zeus',
+          feedback: 'Zeus war in der griechischen Mythologie Göttervater und Herrscher des Olymps.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welches Element trägt das Symbol "Fe"?',
+          optionen: ['Fluor', 'Eisen', 'Phosphor', 'Francium'],
+          antwort: 1,
+          feedback: 'Fe steht für Eisen (lateinisch ferrum).'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Wer komponierte die Mondscheinsonate?',
+          optionen: ['Mozart', 'Beethoven', 'Bach', 'Schubert'],
+          antwort: 1,
+          feedback: 'Die Mondscheinsonate stammt von Ludwig van Beethoven.'
+        },
+        {
+          typ: 'freitext',
+          frage: 'Wie heißt die Hauptstadt von Kanada?',
+          antwort: 'Ottawa',
+          feedback: 'Die Hauptstadt Kanadas ist Ottawa.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welcher Berg gilt als höchster vollständig in Europa gelegener Berg?',
+          optionen: ['Mont Blanc', 'Elbrus', 'Matterhorn', 'Zugspitze'],
+          antwort: 1,
+          feedback: 'Der Elbrus im Kaukasus (5642 m) gilt geografisch als höchster Berg Europas.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Was bedeutet das englische Wort "library"?',
+          optionen: ['Buchhandlung', 'Bibliothek', 'Verlag', 'Lesesaal'],
+          antwort: 1,
+          feedback: '"Library" bedeutet Bibliothek.'
+        },
+        {
+          typ: 'freitext',
+          frage: 'Wie viele Bundesländer hat die Bundesrepublik Deutschland?',
+          antwort: '16',
+          feedback: 'Deutschland besteht aus 16 Bundesländern.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Wer schrieb das Drama "Faust"?',
+          optionen: ['Friedrich Schiller', 'Gotthold Ephraim Lessing', 'Johann Wolfgang von Goethe', 'Heinrich Heine'],
+          antwort: 2,
+          feedback: '"Faust" wurde von Johann Wolfgang von Goethe verfasst.'
+        },
+        {
+          typ: 'freitext',
+          frage: 'Welche Tonart hat keine Vorzeichen?',
+          antwort: 'C-Dur',
+          feedback: 'C-Dur und a-Moll kommen ohne Vorzeichen aus.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Aus wie vielen Knochen besteht der menschliche Schädel?',
+          optionen: ['12', '22', '33', '48'],
+          antwort: 1,
+          feedback: 'Der menschliche Schädel besteht aus 22 Knochen.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'In welcher Stadt liegt die antike Akropolis?',
+          optionen: ['Rom', 'Istanbul', 'Athen', 'Kairo'],
+          antwort: 2,
+          feedback: 'Die Akropolis steht in Athen.'
+        },
+        {
+          typ: 'freitext',
+          frage: 'Wie heißt die bekannteste, kilometerlange Mauer in Asien?',
+          antwort: 'Chinesische Mauer',
+          feedback: 'Die Chinesische Mauer erstreckt sich über mehrere tausend Kilometer.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Wer entdeckte 1492 Amerika für Europa?',
+          optionen: ['Ferdinand Magellan', 'Christoph Kolumbus', 'Vasco da Gama', 'Hernán Cortés'],
+          antwort: 1,
+          feedback: 'Christoph Kolumbus erreichte 1492 die Karibik.'
+        },
+        {
+          typ: 'freitext',
+          frage: 'Welches Edelmetall trägt das Symbol "Ag"?',
+          antwort: 'Silber',
+          feedback: 'Ag steht für Silber (lateinisch argentum).'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Wie viele Saiten hat eine klassische Gitarre?',
+          optionen: ['4', '5', '6', '7'],
+          antwort: 2,
+          feedback: 'Eine klassische Gitarre hat sechs Saiten.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Wer schrieb die Erzählung "Die Verwandlung"?',
+          optionen: ['Hermann Hesse', 'Thomas Mann', 'Franz Kafka', 'Bertolt Brecht'],
+          antwort: 2,
+          feedback: '"Die Verwandlung" stammt von Franz Kafka.'
+        },
+        {
+          typ: 'freitext',
+          frage: 'Wie heißt der größte See Afrikas (flächenmäßig)?',
+          antwort: 'Victoriasee',
+          feedback: 'Der Victoriasee ist der größte See Afrikas.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welcher Planet besitzt das auffälligste Ringsystem?',
+          optionen: ['Jupiter', 'Saturn', 'Uranus', 'Neptun'],
+          antwort: 1,
+          feedback: 'Saturns Ringe sind die ausgeprägtesten unseres Sonnensystems.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welches ist das einwohnerreichste Land der Welt?',
+          optionen: ['USA', 'China', 'Indien', 'Russland'],
+          antwort: 2,
+          feedback: 'Indien ist seit 2023 das bevölkerungsreichste Land der Welt.'
+        },
+        {
+          typ: 'freitext',
+          frage: 'In welchem Land liegt die Stadt Marrakesch?',
+          antwort: 'Marokko',
+          feedback: 'Marrakesch liegt in Marokko.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Wer schuf die Deckenfresken der Sixtinischen Kapelle?',
+          optionen: ['Raffael', 'Michelangelo', 'Leonardo da Vinci', 'Botticelli'],
+          antwort: 1,
+          feedback: 'Michelangelo malte die Deckenfresken zwischen 1508 und 1512.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Wer formulierte die spezielle Relativitätstheorie?',
+          optionen: ['Isaac Newton', 'Albert Einstein', 'Stephen Hawking', 'Niels Bohr'],
+          antwort: 1,
+          feedback: 'Albert Einstein veröffentlichte die spezielle Relativitätstheorie 1905.'
+        },
+        {
+          typ: 'freitext',
+          frage: 'Wie heißt die Hauptstadt Norwegens?',
+          antwort: 'Oslo',
+          feedback: 'Oslo ist die Hauptstadt Norwegens.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welche Sprache hat weltweit die meisten Muttersprachler?',
+          optionen: ['Englisch', 'Spanisch', 'Mandarin-Chinesisch', 'Hindi'],
+          antwort: 2,
+          feedback: 'Mandarin-Chinesisch hat die meisten Muttersprachler.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welches Organ produziert das Hormon Insulin?',
+          optionen: ['Leber', 'Bauchspeicheldrüse', 'Niere', 'Magen'],
+          antwort: 1,
+          feedback: 'Insulin wird in den Beta-Zellen der Bauchspeicheldrüse gebildet.'
+        },
+        {
+          typ: 'freitext',
+          frage: 'Welcher Fluss fließt durch Wien?',
+          antwort: 'Donau',
+          feedback: 'Die Donau fließt durch Wien.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welche Stadt liegt am Bosporus?',
+          optionen: ['Athen', 'Istanbul', 'Beirut', 'Damaskus'],
+          antwort: 1,
+          feedback: 'Istanbul liegt am Bosporus, der Europa und Asien trennt.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Wer verfasste die "Odyssee"?',
+          optionen: ['Sophokles', 'Homer', 'Platon', 'Aristoteles'],
+          antwort: 1,
+          feedback: 'Die Odyssee wird Homer zugeschrieben.'
+        },
+        {
+          typ: 'freitext',
+          frage: 'Wie heißt der höchste Berg der Welt?',
+          antwort: 'Mount Everest',
+          feedback: 'Der Mount Everest im Himalaya ist mit 8848 m der höchste Berg.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welches Land hat die größte Fläche in Südamerika?',
+          optionen: ['Argentinien', 'Brasilien', 'Peru', 'Kolumbien'],
+          antwort: 1,
+          feedback: 'Brasilien ist das flächengrößte Land Südamerikas.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Wer war der erste Mensch auf dem Mond?',
+          optionen: ['Buzz Aldrin', 'Neil Armstrong', 'Juri Gagarin', 'John Glenn'],
+          antwort: 1,
+          feedback: 'Neil Armstrong betrat 1969 als Erster den Mond.'
+        },
+        {
+          typ: 'freitext',
+          frage: 'In welchem Jahr begann der Zweite Weltkrieg?',
+          antwort: '1939',
+          feedback: 'Der Zweite Weltkrieg begann am 1. September 1939.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welche Krankheit wird durch das HI-Virus ausgelöst?',
+          optionen: ['Krebs', 'AIDS', 'Tuberkulose', 'Pest'],
+          antwort: 1,
+          feedback: 'Eine HIV-Infektion kann unbehandelt zu AIDS führen.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Wer komponierte die Oper "Die Zauberflöte"?',
+          optionen: ['Wolfgang Amadeus Mozart', 'Richard Wagner', 'Giuseppe Verdi', 'Giacomo Puccini'],
+          antwort: 0,
+          feedback: '"Die Zauberflöte" wurde 1791 von Mozart komponiert.'
+        },
+        {
+          typ: 'freitext',
+          frage: 'Wie heißt der kleinste Baustein eines chemischen Elements?',
+          antwort: 'Atom',
+          feedback: 'Atome sind die kleinsten Bausteine chemischer Elemente.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welche Programmiersprache wird hauptsächlich für die Interaktivität von Webseiten genutzt?',
+          optionen: ['Python', 'Java', 'JavaScript', 'C++'],
+          antwort: 2,
+          feedback: 'JavaScript ist die wichtigste Sprache für clientseitige Webinteraktion.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'In welchem Land entstand das Origami?',
+          optionen: ['China', 'Korea', 'Japan', 'Vietnam'],
+          antwort: 2,
+          feedback: 'Die Faltkunst Origami stammt aus Japan.'
+        },
+        {
+          typ: 'freitext',
+          frage: 'Wie heißt die Hauptstadt von Argentinien?',
+          antwort: 'Buenos Aires',
+          feedback: 'Buenos Aires ist die Hauptstadt Argentiniens.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'In welchem Jahr wurde der Vertrag von Maastricht unterzeichnet?',
+          optionen: ['1985', '1992', '1995', '2000'],
+          antwort: 1,
+          feedback: 'Der Vertrag von Maastricht wurde am 7. Februar 1992 unterzeichnet.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welcher Maler schnitt sich nach einem Streit ein Stück seines Ohrs ab?',
+          optionen: ['Pablo Picasso', 'Salvador Dalí', 'Vincent van Gogh', 'Claude Monet'],
+          antwort: 2,
+          feedback: 'Vincent van Gogh verstümmelte sich 1888 sein linkes Ohr.'
+        },
+        {
+          typ: 'freitext',
+          frage: 'Welcher Vogel ziert das Bundeswappen Deutschlands?',
+          antwort: 'Adler',
+          feedback: 'Im Bundeswappen ist ein schwarzer Adler dargestellt.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welche Stadt ist die Hauptstadt Ägyptens?',
+          optionen: ['Casablanca', 'Kairo', 'Khartum', 'Tripolis'],
+          antwort: 1,
+          feedback: 'Kairo ist die Hauptstadt Ägyptens.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welches Element ist das häufigste im Universum?',
+          optionen: ['Helium', 'Wasserstoff', 'Sauerstoff', 'Kohlenstoff'],
+          antwort: 1,
+          feedback: 'Wasserstoff macht rund 75% der baryonischen Materie im Universum aus.'
+        },
+        {
+          typ: 'freitext',
+          frage: 'Welche Sprache wird im Vatikan offiziell verwendet?',
+          antwort: 'Latein',
+          feedback: 'Die offizielle Sprache des Heiligen Stuhls ist Latein.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Wer schrieb den dystopischen Roman "1984"?',
+          optionen: ['Aldous Huxley', 'George Orwell', 'Ray Bradbury', 'H. G. Wells'],
+          antwort: 1,
+          feedback: '"1984" wurde 1949 von George Orwell veröffentlicht.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Wie viele Spieler hat eine Basketballmannschaft gleichzeitig auf dem Feld?',
+          optionen: ['4', '5', '6', '7'],
+          antwort: 1,
+          feedback: 'Im Basketball spielen pro Team fünf Spieler gleichzeitig.'
+        },
+        {
+          typ: 'freitext',
+          frage: 'Welche römische Zahl steht für 50?',
+          antwort: 'L',
+          feedback: 'Im römischen Zahlensystem steht L für 50.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welcher Wissenschaftler formulierte das Gravitationsgesetz?',
+          optionen: ['Galileo Galilei', 'Isaac Newton', 'Johannes Kepler', 'Albert Einstein'],
+          antwort: 1,
+          feedback: 'Isaac Newton formulierte das klassische Gravitationsgesetz.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welches Land grenzt NICHT an Deutschland?',
+          optionen: ['Polen', 'Belgien', 'Italien', 'Dänemark'],
+          antwort: 2,
+          feedback: 'Italien grenzt nicht an Deutschland.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welche Stadt ist die Hauptstadt Schwedens?',
+          optionen: ['Oslo', 'Stockholm', 'Helsinki', 'Kopenhagen'],
+          antwort: 1,
+          feedback: 'Stockholm ist die Hauptstadt Schwedens.'
+        },
+        {
+          typ: 'freitext',
+          frage: 'Wie heißt das Werkzeug zum Messen von Winkeln in Grad?',
+          antwort: 'Winkelmesser',
+          feedback: 'Winkel misst man üblicherweise mit einem Winkelmesser (Geodreieck).'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'In welchem Land wurde Schach (Chaturanga) entwickelt?',
+          optionen: ['China', 'Indien', 'Persien', 'Ägypten'],
+          antwort: 1,
+          feedback: 'Die Vorform des Schachs, Chaturanga, entstand in Indien.'
+        },
+        {
+          typ: 'freitext',
+          frage: 'Wie viele Mägen besitzt eine Kuh?',
+          antwort: '4',
+          feedback: 'Eine Kuh hat vier Mägen: Pansen, Netzmagen, Blättermagen und Labmagen.'
+        },
+        {
+          typ: 'freitext',
+          frage: 'Welche Symphonie Beethovens enthält die "Ode an die Freude"?',
+          antwort: 'Neunte',
+          feedback: 'Beethovens 9. Symphonie endet mit dem Schlusschor "Ode an die Freude".'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welcher Fluss fließt durch Paris?',
+          optionen: ['Rhône', 'Loire', 'Seine', 'Garonne'],
+          antwort: 2,
+          feedback: 'Die Seine fließt durch Paris.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welche Stadt ist die Hauptstadt Portugals?',
+          optionen: ['Madrid', 'Lissabon', 'Porto', 'Coimbra'],
+          antwort: 1,
+          feedback: 'Lissabon ist die Hauptstadt Portugals.'
+        },
+        {
+          typ: 'freitext',
+          frage: 'Wie heißt der größte Mond unseres Sonnensystems?',
+          antwort: 'Ganymed',
+          feedback: 'Ganymed, ein Mond Jupiters, ist sogar größer als der Planet Merkur.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welches Vitamin bildet die Haut bei Sonnenlicht?',
+          optionen: ['Vitamin A', 'Vitamin B12', 'Vitamin C', 'Vitamin D'],
+          antwort: 3,
+          feedback: 'Unter UV-B-Einstrahlung bildet die Haut Vitamin D.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'In welchem Turnier wird das berühmteste Rasentennis-Grand-Slam ausgetragen?',
+          optionen: ['French Open', 'Wimbledon', 'US Open', 'Australian Open'],
+          antwort: 1,
+          feedback: 'Wimbledon ist das einzige Grand-Slam-Turnier auf Rasen.'
+        },
+        {
+          typ: 'freitext',
+          frage: 'Wie heißt die tiefste Stelle der Weltmeere?',
+          antwort: 'Marianengraben',
+          feedback: 'Der Marianengraben im Pazifik ist mit fast 11.000 m die tiefste Stelle.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welche Stadt ist die Hauptstadt Polens?',
+          optionen: ['Krakau', 'Warschau', 'Danzig', 'Lodz'],
+          antwort: 1,
+          feedback: 'Warschau ist die Hauptstadt Polens.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welche Programmiersprache nutzt traditionell die Einrückung als Block-Syntax?',
+          optionen: ['JavaScript', 'Python', 'Java', 'C#'],
+          antwort: 1,
+          feedback: 'In Python definiert die Einrückung den Code-Block.'
+        },
+        {
+          typ: 'freitext',
+          frage: 'Welche römische Zahl steht für 1000?',
+          antwort: 'M',
+          feedback: 'M steht im römischen Zahlensystem für 1000.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welcher See bildet die Grenze zwischen Deutschland, Österreich und der Schweiz?',
+          optionen: ['Genfersee', 'Vierwaldstättersee', 'Bodensee', 'Chiemsee'],
+          antwort: 2,
+          feedback: 'Am Bodensee treffen Deutschland, Österreich und die Schweiz aufeinander.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welche Stadt ist die Hauptstadt Vietnams?',
+          optionen: ['Bangkok', 'Hanoi', 'Jakarta', 'Manila'],
+          antwort: 1,
+          feedback: 'Hanoi ist die Hauptstadt Vietnams.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welche Schlacht beendete 1815 die napoleonischen Kriege?',
+          optionen: ['Austerlitz', 'Waterloo', 'Leipzig', 'Borodino'],
+          antwort: 1,
+          feedback: 'Bei Waterloo wurde Napoleon 1815 endgültig besiegt.'
+        },
+        {
+          typ: 'freitext',
+          frage: 'Welche Naturkonstante steht in E = mc² für das Quadrat?',
+          antwort: 'Lichtgeschwindigkeit',
+          feedback: 'c bezeichnet die Lichtgeschwindigkeit im Vakuum (rund 299.792 km/s).'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welches Element hat die Ordnungszahl 79?',
+          optionen: ['Silber', 'Gold', 'Platin', 'Quecksilber'],
+          antwort: 1,
+          feedback: 'Gold (Au) hat die Ordnungszahl 79.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Wer schrieb den Roman "Krieg und Frieden"?',
+          optionen: ['Fjodor Dostojewski', 'Lew Tolstoi', 'Anton Tschechow', 'Nikolai Gogol'],
+          antwort: 1,
+          feedback: '"Krieg und Frieden" stammt von Lew Tolstoi.'
+        },
+        {
+          typ: 'freitext',
+          frage: 'Wie heißt die Hauptstadt von Liechtenstein?',
+          antwort: 'Vaduz',
+          feedback: 'Vaduz ist die Hauptstadt des Fürstentums Liechtenstein.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welche Sprache war die europäische Wissenschaftssprache des Mittelalters?',
+          optionen: ['Griechisch', 'Latein', 'Französisch', 'Arabisch'],
+          antwort: 1,
+          feedback: 'Latein dominierte das mittelalterliche Wissenschaftsschrifttum in Europa.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welches Element ist für die rote Farbe des Blutes verantwortlich?',
+          optionen: ['Kalium', 'Eisen', 'Magnesium', 'Calcium'],
+          antwort: 1,
+          feedback: 'Das Eisen im Hämoglobin gibt dem Blut seine rote Farbe.'
+        },
+        {
+          typ: 'freitext',
+          frage: 'Wie heißt die Hauptstadt der Mongolei?',
+          antwort: 'Ulan Bator',
+          feedback: 'Ulan Bator (Ulaanbaatar) ist die Hauptstadt der Mongolei.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Wer formulierte die Unschärferelation der Quantenmechanik?',
+          optionen: ['Niels Bohr', 'Erwin Schrödinger', 'Werner Heisenberg', 'Max Planck'],
+          antwort: 2,
+          feedback: 'Werner Heisenberg formulierte die Unschärferelation 1927.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Wer schuf das Gemälde "Der Schrei"?',
+          optionen: ['Edvard Munch', 'Gustav Klimt', 'Egon Schiele', 'Wassily Kandinsky'],
+          antwort: 0,
+          feedback: '"Der Schrei" stammt vom norwegischen Maler Edvard Munch.'
+        },
+        {
+          typ: 'freitext',
+          frage: 'Welcher antike Philosoph verfasste das Werk "Politeia" (Der Staat)?',
+          antwort: 'Platon',
+          feedback: 'Platon schrieb den Dialog "Politeia" über den idealen Staat.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'In welchem Jahr eroberten die Osmanen Konstantinopel?',
+          optionen: ['1389', '1453', '1492', '1521'],
+          antwort: 1,
+          feedback: 'Konstantinopel fiel am 29. Mai 1453 an Sultan Mehmed II.'
+        },
+        {
+          typ: 'freitext',
+          frage: 'Welcher mathematische Wert (auf eine Nachkommastelle gerundet) beschreibt den goldenen Schnitt?',
+          antwort: '1,6',
+          feedback: 'Phi ≈ 1,618; auf eine Nachkommastelle gerundet 1,6.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welche Erregerart verursachte die Spanische Grippe 1918?',
+          optionen: ['Pockenvirus', 'Cholerabakterium', 'Influenzavirus', 'Pestbakterium'],
+          antwort: 2,
+          feedback: 'Die Spanische Grippe wurde durch das Influenzavirus H1N1 verursacht.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Wer schrieb den Roman "Der Process"?',
+          optionen: ['Franz Kafka', 'Thomas Mann', 'Hermann Hesse', 'Bertolt Brecht'],
+          antwort: 0,
+          feedback: '"Der Process" stammt von Franz Kafka.'
+        },
+        {
+          typ: 'freitext',
+          frage: 'Welches Edelgas wird klassisch in Leuchtreklamen verwendet?',
+          antwort: 'Neon',
+          feedback: 'Neon erzeugt das typisch rot-orange Leuchten in "Neonröhren".'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'In welchem Land liegt Machu Picchu?',
+          optionen: ['Bolivien', 'Peru', 'Ecuador', 'Chile'],
+          antwort: 1,
+          feedback: 'Machu Picchu liegt in den Anden Perus.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welche Frequenz hat der Kammerton a¹ standardmäßig?',
+          optionen: ['432 Hz', '440 Hz', '444 Hz', '450 Hz'],
+          antwort: 1,
+          feedback: 'Der internationale Kammerton liegt bei 440 Hz.'
+        },
+        {
+          typ: 'freitext',
+          frage: 'Welcher französische Kaiser starb 1821 auf St. Helena?',
+          antwort: 'Napoleon',
+          feedback: 'Napoleon Bonaparte starb am 5. Mai 1821 in der Verbannung auf St. Helena.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welche Säure ist im menschlichen Magen enthalten?',
+          optionen: ['Schwefelsäure', 'Essigsäure', 'Salzsäure', 'Salpetersäure'],
+          antwort: 2,
+          feedback: 'Der Magensaft enthält Salzsäure (HCl).'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'In welchem Land erfand Johannes Gutenberg den Buchdruck mit beweglichen Lettern?',
+          optionen: ['Italien', 'England', 'Deutschland', 'Niederlande'],
+          antwort: 2,
+          feedback: 'Gutenberg entwickelte den Druck mit beweglichen Lettern um 1450 in Mainz.'
+        },
+        {
+          typ: 'freitext',
+          frage: 'Wer schrieb "Die göttliche Komödie"?',
+          antwort: 'Dante',
+          feedback: 'Dante Alighieri verfasste "La Divina Commedia" im frühen 14. Jahrhundert.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welches Element hat das chemische Symbol "K"?',
+          optionen: ['Kohlenstoff', 'Kalium', 'Kupfer', 'Krypton'],
+          antwort: 1,
+          feedback: 'K steht für Kalium (lateinisch kalium).'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welcher große Komponist erkrankte ab dem 26. Lebensjahr an Taubheit?',
+          optionen: ['Mozart', 'Beethoven', 'Bach', 'Haydn'],
+          antwort: 1,
+          feedback: 'Ludwig van Beethoven verlor zunehmend sein Gehör.'
+        },
+        {
+          typ: 'freitext',
+          frage: 'Wie heißt das Mittelmeer auf Englisch?',
+          antwort: 'Mediterranean',
+          feedback: 'Im Englischen heißt das Mittelmeer "Mediterranean Sea".'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welche Wissenschaftlerin erhielt als erste Person zwei Nobelpreise in unterschiedlichen Wissenschaften?',
+          optionen: ['Albert Einstein', 'Marie Curie', 'Niels Bohr', 'Linus Pauling'],
+          antwort: 1,
+          feedback: 'Marie Curie erhielt 1903 den Nobelpreis für Physik und 1911 den für Chemie.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welcher europäische Krieg dauerte von 1618 bis 1648?',
+          optionen: ['Hundertjähriger Krieg', 'Dreißigjähriger Krieg', 'Krimkrieg', 'Erster Weltkrieg'],
+          antwort: 1,
+          feedback: 'Der Dreißigjährige Krieg (1618-1648) verheerte weite Teile Mitteleuropas.'
+        },
+        {
+          typ: 'freitext',
+          frage: 'Welche Hauptstadt liegt am Tigris?',
+          antwort: 'Bagdad',
+          feedback: 'Bagdad, die Hauptstadt des Irak, liegt am Tigris.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welcher Mathematiker entwickelte unabhängig von Newton die Infinitesimalrechnung?',
+          optionen: ['Leonhard Euler', 'Gottfried Wilhelm Leibniz', 'Carl Friedrich Gauß', 'Blaise Pascal'],
+          antwort: 1,
+          feedback: 'Leibniz entwickelte die Infinitesimalrechnung parallel zu Newton.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welcher Vertrag beendete formal den Ersten Weltkrieg?',
+          optionen: ['Versailler Vertrag', 'Vertrag von Locarno', 'Wiener Kongress', 'Pariser Vorortverträge'],
+          antwort: 0,
+          feedback: 'Der Versailler Vertrag wurde am 28. Juni 1919 unterzeichnet.'
+        },
+        {
+          typ: 'freitext',
+          frage: 'Welche Insel ist die größte der Welt (ohne Australien als Kontinent)?',
+          antwort: 'Grönland',
+          feedback: 'Grönland ist mit rund 2,17 Mio. km² die größte Insel der Welt.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'In welchem Jahr wurde die Sowjetunion offiziell aufgelöst?',
+          optionen: ['1989', '1990', '1991', '1993'],
+          antwort: 2,
+          feedback: 'Die UdSSR wurde am 26. Dezember 1991 offiziell aufgelöst.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Aus welchem Samen wächst ein Eichenbaum?',
+          optionen: ['Buchecker', 'Eichel', 'Kastanie', 'Walnuss'],
+          antwort: 1,
+          feedback: 'Die Eichel ist die Frucht der Eiche.'
+        },
+        {
+          typ: 'freitext',
+          frage: 'Welcher griechische Held tötete den Minotaurus im Labyrinth?',
+          antwort: 'Theseus',
+          feedback: 'Theseus erschlug den Minotaurus auf Kreta.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welches Element gilt als das schwerste natürlich in größeren Mengen vorkommende?',
+          optionen: ['Uran', 'Plutonium', 'Blei', 'Wismut'],
+          antwort: 0,
+          feedback: 'Uran (Z=92) ist das schwerste in nennenswerter Menge in der Natur vorkommende Element.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Wer malte "Sternennacht" (1889)?',
+          optionen: ['Claude Monet', 'Vincent van Gogh', 'Paul Cézanne', 'Auguste Renoir'],
+          antwort: 1,
+          feedback: '"Sternennacht" ist eines der berühmtesten Werke van Goghs.'
+        },
+        {
+          typ: 'freitext',
+          frage: 'Welche Schicht der Atmosphäre schützt die Erde vor schädlicher UV-Strahlung?',
+          antwort: 'Ozonschicht',
+          feedback: 'Die Ozonschicht in der Stratosphäre absorbiert einen Großteil der UV-Strahlung.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Wer war der erste römische Kaiser?',
+          optionen: ['Julius Caesar', 'Augustus', 'Nero', 'Trajan'],
+          antwort: 1,
+          feedback: 'Augustus (Gaius Octavius) gilt als erster römischer Kaiser ab 27 v. Chr.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welche Theorie erklärt die Bewegung der Kontinente?',
+          optionen: ['Evolutionstheorie', 'Plattentektonik', 'Urknalltheorie', 'Quantentheorie'],
+          antwort: 1,
+          feedback: 'Die Plattentektonik beschreibt die Bewegung der Lithosphärenplatten.'
+        },
+        {
+          typ: 'freitext',
+          frage: 'Welche russische Stadt hieß bis 1991 Leningrad?',
+          antwort: 'Sankt Petersburg',
+          feedback: 'Leningrad wurde 1991 in Sankt Petersburg umbenannt.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Wer schrieb den Roman "Don Quijote"?',
+          optionen: ['Miguel de Cervantes', 'Lope de Vega', 'Pedro Calderón', 'Federico García Lorca'],
+          antwort: 0,
+          feedback: '"Don Quijote" stammt von Miguel de Cervantes (1605/1615).'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welche Stadt ist die Hauptstadt Aserbaidschans?',
+          optionen: ['Tiflis', 'Baku', 'Jerewan', 'Taschkent'],
+          antwort: 1,
+          feedback: 'Baku am Kaspischen Meer ist die Hauptstadt Aserbaidschans.'
+        },
+        {
+          typ: 'freitext',
+          frage: 'Welche Wissenschaft erforscht Fossilien und vergangenes Leben?',
+          antwort: 'Paläontologie',
+          feedback: 'Die Paläontologie ist die Wissenschaft der vorzeitlichen Lebewesen.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welche Komposition Bachs trägt die Werknummer BWV 565?',
+          optionen: ['Goldberg-Variationen', 'Toccata und Fuge in d-Moll', 'h-Moll-Messe', 'Brandenburgisches Konzert Nr. 3'],
+          antwort: 1,
+          feedback: 'BWV 565 ist die berühmte Toccata und Fuge in d-Moll.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welches Land hat – inklusive Überseegebieten – die meisten Zeitzonen?',
+          optionen: ['USA', 'Russland', 'Frankreich', 'China'],
+          antwort: 2,
+          feedback: 'Frankreich deckt mit seinen Überseegebieten 12 Zeitzonen ab.'
+        },
+        {
+          typ: 'freitext',
+          frage: 'Welche physikalische Konstante hat einen Wert von etwa 6,67·10⁻¹¹ m³/(kg·s²)?',
+          antwort: 'Gravitationskonstante',
+          feedback: 'Die Gravitationskonstante G beträgt rund 6,674·10⁻¹¹ m³·kg⁻¹·s⁻².'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Wer veröffentlichte 1543 ein bahnbrechendes Werk zum heliozentrischen Weltbild?',
+          optionen: ['Galileo Galilei', 'Johannes Kepler', 'Nikolaus Kopernikus', 'Tycho Brahe'],
+          antwort: 2,
+          feedback: 'Kopernikus stellte 1543 in "De revolutionibus orbium coelestium" das heliozentrische Modell vor.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welcher Regisseur drehte "2001: Odyssee im Weltraum"?',
+          optionen: ['George Lucas', 'Stanley Kubrick', 'Francis Ford Coppola', 'Ridley Scott'],
+          antwort: 1,
+          feedback: 'Stanley Kubrick führte 1968 bei "2001: A Space Odyssey" Regie.'
+        },
+        {
+          typ: 'freitext',
+          frage: 'Wie heißt die Hauptstadt Kenias?',
+          antwort: 'Nairobi',
+          feedback: 'Nairobi ist die Hauptstadt Kenias.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welche Sprache hat das längste Alphabet der Welt?',
+          optionen: ['Russisch', 'Khmer', 'Chinesisch', 'Hindi'],
+          antwort: 1,
+          feedback: 'Das Khmer-Alphabet umfasst rund 74 Zeichen und gilt als längstes Alphabet.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Wer begründete die Psychoanalyse?',
+          optionen: ['Carl Gustav Jung', 'Sigmund Freud', 'Alfred Adler', 'B. F. Skinner'],
+          antwort: 1,
+          feedback: 'Sigmund Freud gilt als Begründer der Psychoanalyse.'
+        },
+        {
+          typ: 'freitext',
+          frage: 'Wie heißt die Hauptstadt Islands?',
+          antwort: 'Reykjavik',
+          feedback: 'Reykjavik ist die Hauptstadt Islands.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welcher Vertrag begründete 1957 die Europäische Wirtschaftsgemeinschaft (EWG)?',
+          optionen: ['Vertrag von Maastricht', 'Römische Verträge', 'Vertrag von Lissabon', 'Pariser Vertrag'],
+          antwort: 1,
+          feedback: 'Die Römischen Verträge wurden am 25. März 1957 unterzeichnet.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welches mythologische Wesen ist halb Löwe, halb Adler?',
+          optionen: ['Phönix', 'Drache', 'Greif', 'Sphinx'],
+          antwort: 2,
+          feedback: 'Der Greif ist ein Mischwesen mit Löwenkörper und Adlerkopf.'
+        },
+        {
+          typ: 'freitext',
+          frage: 'Welcher italienische Komponist schrieb "Die vier Jahreszeiten"?',
+          antwort: 'Vivaldi',
+          feedback: 'Antonio Vivaldi komponierte "Le quattro stagioni" um 1725.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welche Stadt war die Hauptstadt des Byzantinischen Reiches?',
+          optionen: ['Athen', 'Konstantinopel', 'Rom', 'Alexandria'],
+          antwort: 1,
+          feedback: 'Konstantinopel (heute Istanbul) war Hauptstadt des Byzantinischen Reiches.'
+        },
+        {
+          typ: 'freitext',
+          frage: 'Welche Pflanze stand 1637 im Zentrum des berühmten Spekulationsfiebers in den Niederlanden?',
+          antwort: 'Tulpe',
+          feedback: 'Die "Tulpenmanie" 1637 gilt als eine der ersten Spekulationsblasen der Geschichte.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welcher griechische Buchstabe steht für die Kreiszahl?',
+          optionen: ['Alpha', 'Pi', 'Sigma', 'Omega'],
+          antwort: 1,
+          feedback: 'Die Kreiszahl wird mit dem griechischen Buchstaben π (Pi) bezeichnet.'
+        },
+        {
+          typ: 'freitext',
+          frage: 'Wie heißt das Hormon, das oft "Glückshormon" genannt wird?',
+          antwort: 'Serotonin',
+          feedback: 'Serotonin trägt wesentlich zum Wohlbefinden bei und wird als Glückshormon bezeichnet.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welches Land hat die Form eines Bumerangs (grob)?',
+          optionen: ['Indonesien', 'Chile', 'Vietnam', 'Norwegen'],
+          antwort: 1,
+          feedback: 'Chile erstreckt sich als lang gezogener Streifen entlang der Pazifikküste Südamerikas.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welche Hauptstadt liegt direkt am Roten Meer?',
+          optionen: ['Riad', 'Dschidda', 'Asmara', 'Khartum'],
+          antwort: 2,
+          feedback: 'Asmara, die Hauptstadt Eritreas, liegt nahe dem Roten Meer (Eritrea grenzt direkt daran).'
+        },
+        {
+          typ: 'freitext',
+          frage: 'Welche Pflanze liefert Naturkautschuk?',
+          antwort: 'Kautschukbaum',
+          feedback: 'Aus dem Milchsaft (Latex) des Kautschukbaums wird Naturkautschuk gewonnen.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welcher Wissenschaftler entwickelte das Periodensystem der Elemente?',
+          optionen: ['Marie Curie', 'Dmitri Mendelejew', 'Alfred Nobel', 'Linus Pauling'],
+          antwort: 1,
+          feedback: 'Dmitri Mendelejew veröffentlichte 1869 die erste Version des Periodensystems.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Wie heißt der höchste Wasserfall der Welt?',
+          optionen: ['Niagarafälle', 'Iguazú-Fälle', 'Salto Ángel', 'Viktoriafälle'],
+          antwort: 2,
+          feedback: 'Der Salto Ángel in Venezuela ist mit 979 m der höchste freifallende Wasserfall.'
+        },
+        {
+          typ: 'freitext',
+          frage: 'Welche Krankheit wird über die Anopheles-Mücke übertragen?',
+          antwort: 'Malaria',
+          feedback: 'Die Anopheles-Mücke überträgt die Erreger der Malaria.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welcher Komponist schuf das Werk "Der Ring des Nibelungen"?',
+          optionen: ['Johannes Brahms', 'Richard Strauss', 'Richard Wagner', 'Robert Schumann'],
+          antwort: 2,
+          feedback: '"Der Ring des Nibelungen" ist ein Bühnenfestspiel von Richard Wagner.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welches Tier hat den längsten bekannten Lebenszyklus unter den Wirbeltieren?',
+          optionen: ['Galapagos-Riesenschildkröte', 'Grönlandhai', 'Bowhead-Wal', 'Aldabra-Schildkröte'],
+          antwort: 1,
+          feedback: 'Der Grönlandhai kann über 300 Jahre alt werden.'
+        },
+        {
+          typ: 'freitext',
+          frage: 'Welche Hauptstadt liegt am Mekong?',
+          antwort: 'Phnom Penh',
+          feedback: 'Phnom Penh, die Hauptstadt Kambodschas, liegt am Zusammenfluss von Mekong und Tonle Sap.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welche Einheit misst die elektrische Spannung?',
+          optionen: ['Ampere', 'Ohm', 'Volt', 'Watt'],
+          antwort: 2,
+          feedback: 'Elektrische Spannung wird in Volt (V) gemessen.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welches Sternbild enthält den Polarstern?',
+          optionen: ['Großer Bär', 'Kleiner Bär', 'Cassiopeia', 'Orion'],
+          antwort: 1,
+          feedback: 'Der Polarstern (Polaris) ist der hellste Stern im Sternbild Kleiner Bär.'
+        },
+        {
+          typ: 'freitext',
+          frage: 'Welcher Wissenschaftler stellte die Evolutionstheorie auf?',
+          antwort: 'Darwin',
+          feedback: 'Charles Darwin formulierte 1859 in "On the Origin of Species" die Evolutionstheorie.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welche Stadt wird oft als "Stadt der Liebe" bezeichnet?',
+          optionen: ['Wien', 'Paris', 'Venedig', 'Rom'],
+          antwort: 1,
+          feedback: 'Paris trägt traditionell den Beinamen "Stadt der Liebe".'
+        },
+        {
+          typ: 'freitext',
+          frage: 'Welche Krankheit wird im Volksmund auch "Zuckerkrankheit" genannt?',
+          antwort: 'Diabetes',
+          feedback: 'Die Zuckerkrankheit ist medizinisch als Diabetes mellitus bekannt.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welcher Mathematiker bewies die Unmöglichkeit der allgemeinen Lösung der Gleichung 5. Grades durch Radikale?',
+          optionen: ['Niels Henrik Abel', 'Évariste Galois', 'Carl Friedrich Gauß', 'Augustin-Louis Cauchy'],
+          antwort: 0,
+          feedback: 'Abel bewies 1824 die Unlösbarkeit der allgemeinen quintischen Gleichung durch Radikale.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welches Land erfand das Papier?',
+          optionen: ['Ägypten', 'China', 'Indien', 'Griechenland'],
+          antwort: 1,
+          feedback: 'Das Papier wurde im antiken China erfunden (Cai Lun, ca. 105 n. Chr.).'
+        },
+        {
+          typ: 'freitext',
+          frage: 'Wie heißt das größte Korallenriff der Welt?',
+          antwort: 'Great Barrier Reef',
+          feedback: 'Das Great Barrier Reef vor Australien ist das größte Korallenriff der Welt.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welches Tier wechselt nicht seine Farbe?',
+          optionen: ['Chamäleon', 'Tintenfisch', 'Flunder', 'Eisbär'],
+          antwort: 3,
+          feedback: 'Eisbären verändern ihre Fellfarbe nicht aktiv (auch wenn sie unter UV-Licht teilweise gelblich wirken).'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welche Stadt war Hauptstadt des antiken Ägyptens während des Alten Reiches?',
+          optionen: ['Theben', 'Memphis', 'Alexandria', 'Karnak'],
+          antwort: 1,
+          feedback: 'Memphis war im Alten Reich die Hauptstadt Ägyptens.'
+        },
+        {
+          typ: 'freitext',
+          frage: 'Wer war die erste Frau im Weltall?',
+          antwort: 'Walentina Tereschkowa',
+          feedback: 'Walentina Tereschkowa flog 1963 als erste Frau ins Weltall.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welches Lebewesen produziert über die Hälfte des Sauerstoffs der Erde?',
+          optionen: ['Wälder', 'Algen und Phytoplankton', 'Moose', 'Gräser'],
+          antwort: 1,
+          feedback: 'Marine Algen und Phytoplankton produzieren über die Hälfte des Sauerstoffs der Erde.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Wer schrieb "Hundert Jahre Einsamkeit"?',
+          optionen: ['Mario Vargas Llosa', 'Gabriel García Márquez', 'Jorge Luis Borges', 'Pablo Neruda'],
+          antwort: 1,
+          feedback: 'Gabriel García Márquez veröffentlichte den Roman 1967.'
+        },
+        {
+          typ: 'freitext',
+          frage: 'Wie nennt man die Wissenschaft der Sterne und Himmelskörper?',
+          antwort: 'Astronomie',
+          feedback: 'Die Astronomie untersucht Sterne, Planeten und das Universum.'
+        },
+        {
+          typ: 'multiple-choice',
+          frage: 'Welche Einheit misst elektrischen Strom?',
+          optionen: ['Volt', 'Ampere', 'Ohm', 'Watt'],
+          antwort: 1,
+          feedback: 'Die elektrische Stromstärke wird in Ampere (A) gemessen.'
         }
       ];
 
