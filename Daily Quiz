@@ -12,48 +12,147 @@
       if (!container) return;
 
       function injectQuizStyles() {
+        const old = container.querySelector('style[data-quiz-styles]');
+        if (old) old.remove();
         const cssRules = `
           #${containerId} {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            color: #212529;
+          }
+          #${containerId} .quiz-card {
+            border: 1px solid #d0d7de;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #ffffff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+            max-width: 720px;
+          }
+          #${containerId} .quiz-header {
+            background: #1e3a5f;
+            color: #ffffff;
+            padding: 14px 18px;
+          }
+          #${containerId} .quiz-title {
+            margin: 0 0 2px 0;
+            font-size: 1.15em;
+            font-weight: 700;
+          }
+          #${containerId} .quiz-datum {
+            margin: 0;
+            font-size: 0.85em;
+            opacity: 0.8;
+          }
+          #${containerId} .quiz-body {
+            padding: 18px;
+          }
+          #${containerId} .quiz-frage {
+            font-size: 1.05em;
+            font-weight: 600;
+            margin: 0 0 14px 0;
+            line-height: 1.5;
           }
           #${containerId} .quiz-optionen {
             display: flex;
             flex-direction: column;
-            align-items: flex-start;
-            gap: 8px;
+            align-items: stretch;
+            gap: 10px;
+            margin-bottom: 4px;
           }
           #${containerId} .quiz-option {
-            padding: 6px 12px;
+            padding: 12px 18px;
+            font-size: 1em;
+            line-height: 1.35;
+            border: 1px solid #ced4da;
+            border-radius: 6px;
+            background: #f8f9fa;
+            color: #212529;
             cursor: pointer;
+            text-align: left;
+            transition: background-color 0.15s ease, border-color 0.15s ease;
+          }
+          #${containerId} .quiz-option:not(:disabled):hover {
+            background: #e9ecef;
+            border-color: #adb5bd;
+          }
+          #${containerId} .quiz-option:not(:disabled):focus {
+            outline: 2px solid #0d6efd;
+            outline-offset: 2px;
           }
           #${containerId} .quiz-option:disabled {
             cursor: default;
+            opacity: 0.9;
+          }
+          #${containerId} .freitext-zeile {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            align-items: stretch;
+          }
+          #${containerId} .freitext-antwort {
+            flex: 1;
+            min-width: 180px;
+            padding: 10px 14px;
+            font-size: 1em;
+            border: 1px solid #ced4da;
+            border-radius: 6px;
+            background: #ffffff;
+            color: #212529;
+            box-sizing: border-box;
+          }
+          #${containerId} .freitext-antwort:focus {
+            outline: 2px solid #0d6efd;
+            outline-offset: 1px;
+            border-color: #0d6efd;
+          }
+          #${containerId} .freitext-pruefen {
+            padding: 10px 20px;
+            font-size: 1em;
+            border: none;
+            border-radius: 6px;
+            background: #0d6efd;
+            color: #ffffff;
+            cursor: pointer;
+            font-weight: 600;
+          }
+          #${containerId} .freitext-pruefen:not(:disabled):hover {
+            background: #0b5ed7;
+          }
+          #${containerId} .freitext-pruefen:disabled {
+            opacity: 0.6;
+            cursor: default;
+          }
+          #${containerId} .feedback-bereich:empty {
+            display: none;
           }
           #${containerId} .feedback-korrekt {
-            color: #155724;
-            background-color: #d4edda;
-            border: 1px solid #c3e6cb;
-            border-radius: 4px;
-            padding: 10px 15px;
-            margin-top: 15px;
-            font-weight: bold;
+            color: #0a3622;
+            background-color: #d1e7dd;
+            border-left: 4px solid #198754;
+            border-radius: 0 5px 5px 0;
+            padding: 12px 16px;
+            margin-top: 16px;
+            line-height: 1.5;
           }
           #${containerId} .feedback-falsch {
-            color: #721c24;
+            color: #58151c;
             background-color: #f8d7da;
-            border: 1px solid #f5c6cb;
-            border-radius: 4px;
-            padding: 10px 15px;
-            margin-top: 15px;
-            font-weight: bold;
+            border-left: 4px solid #dc3545;
+            border-radius: 0 5px 5px 0;
+            padding: 12px 16px;
+            margin-top: 16px;
+            line-height: 1.5;
           }
           #${containerId} .antwort-highlight {
-            background-color: #d4edda !important;
-            border-color: #28a745 !important;
-            font-weight: bold;
+            background-color: #d1e7dd !important;
+            border-color: #198754 !important;
+            font-weight: 700;
+          }
+          @media (max-width: 480px) {
+            #${containerId} .freitext-pruefen { width: 100%; }
           }
         `;
         const styleElement = document.createElement('style');
+        styleElement.setAttribute('data-quiz-styles', '1');
         styleElement.textContent = cssRules;
         // In Container einfügen (nicht document.head) – Moodle-kompatibel
         container.insertBefore(styleElement, container.firstChild);
@@ -1774,24 +1873,21 @@
       const frageIndex = ((tagesNummer % fragen.length) + fragen.length) % fragen.length;
       const heutigeFrage = fragen[frageIndex];
 
-      function adjustButtonWidths() {
-        const buttons = container.querySelectorAll('.quiz-option');
-        if (buttons.length === 0) return;
-        let maxWidth = 0;
-        buttons.forEach(button => {
-          if (button.offsetWidth > maxWidth) maxWidth = button.offsetWidth;
-        });
-        buttons.forEach(button => {
-          button.style.width = maxWidth + 'px';
-        });
-      }
-
       function quizAnzeigen() {
         if (!heutigeFrage) {
           container.innerHTML = 'Fehler: Heutige Frage konnte nicht geladen werden.';
           return;
         }
-        let htmlContent = '<h3>Daily Quiz</h3><p>' + heutigeFrage.frage + '</p>';
+        const datum = heute.toLocaleDateString('de-DE', {
+          weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
+        });
+        let htmlContent = '<div class="quiz-card">';
+        htmlContent += '<div class="quiz-header">';
+        htmlContent += '<h3 class="quiz-title">Quiz des Tages</h3>';
+        htmlContent += '<p class="quiz-datum">' + datum + '</p>';
+        htmlContent += '</div>';
+        htmlContent += '<div class="quiz-body">';
+        htmlContent += '<p class="quiz-frage">' + heutigeFrage.frage + '</p>';
         if (heutigeFrage.typ === 'multiple-choice') {
           htmlContent += '<div class="quiz-optionen" role="group" aria-label="Antwortmöglichkeiten">';
           heutigeFrage.optionen.forEach(function(option, index) {
@@ -1799,13 +1895,16 @@
           });
           htmlContent += '</div>';
         } else if (heutigeFrage.typ === 'freitext') {
-          htmlContent += '<div><input type="text" class="freitext-antwort" placeholder="Deine Antwort..." aria-label="Deine Antwort"><button type="button" class="freitext-pruefen">Prüfen</button></div>';
+          htmlContent += '<div class="freitext-zeile">';
+          htmlContent += '<input type="text" class="freitext-antwort" placeholder="Deine Antwort..." aria-label="Deine Antwort">';
+          htmlContent += '<button type="button" class="freitext-pruefen">Prüfen</button>';
+          htmlContent += '</div>';
         }
         htmlContent += '<div class="feedback-bereich" aria-live="polite" aria-atomic="true"></div>';
+        htmlContent += '</div></div>';
         container.innerHTML = htmlContent;
         // Style-Element neu einfügen nach innerHTML-Reset
         injectQuizStyles();
-        adjustButtonWidths();
         attachEventListeners();
       }
 
